@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Comments and solutions for V.I. Arnold's Methematical Models of Classical Mechanics">
+    <meta name="keywords" content="Mathematics,Physics">
+    <meta name="author" content="Adi Ofer">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="mmocm.css">
+    <title>Chapter 1: Experimental facts</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<div class="content">
+<h1>1 The principles of relativity and determinacy</h1>
+<h1>2 The Galilean group and Newton's equations</h1>
+<h2>Affine spaces</h2>
+<h3>A Notation</h3>
+We will denote an element of \(\mathbf{R}\times\mathbf{R}^n\) as \((x,\mathbf{x})\)
+where \(x\in\mathbf{R}\) and \(\mathbf{x}\in\mathbf{R}^n\).
+<h3>B Galilean structure</h3>
+We will use a different notation for the basic Galilean (motion, translation, and rotation)
+transformations than the one used in the book in order to make the parameters more explicit:
+<ul>
+<li>Uniform motion with velocity \(\mathbf{v}\in\mathbf{R}^3\):
+    $$U_{\mathbf{v}}(t,\mathbf{x}) = g_1(t,\mathbf{x}) = (t,\mathbf{x}+\mathbf{v}t)$$
+</li>
+<li>Translation by a vector \((s,\mathbf{s})\in\mathbf{R}\times\mathbf{R}^3\):
+    $$T_{(s,\mathbf{s})}(t,\mathbf{x}) = g_2(t,\mathbf{x}) = (t+s,\mathbf{x}+\mathbf{s})$$
+</li>
+<li>Rotation by an orthogonal matrix \(G\in\mathbf{O}_3(\mathbf{R})\):
+    $$R_G(t,\mathbf{x}) = g_3(t,\mathbf{x}) = (t,G\mathbf{x})$$</li>
+</ul>
+<h4>How do uniform motion transformations behave?</h4>
+\begin{align}
+U_{\mathbf{v+w}}(t, \mathbf{x}) & = (t, \mathbf{x}+(\mathbf{v}+\mathbf{w})t) \\
+& = (t, \mathbf{x} + \mathbf{v}t + \mathbf{w}t) \\
+& = U_{\mathbf{v}}(t, \mathbf{x} + \mathbf{w}t) \\
+& = U_{\mathbf{v}}\circ U_{\mathbf{w}} (t, \mathbf{x})
+\end{align}
+which implies that
+\begin{align}
+U: \mathbf{R^3} & \rightarrow Galilean\left(\mathbf{R}\times\mathbf{R}^3\right) \\
+\mathbf{v} & \mapsto U_{\mathbf{v}}
+\end{align}
+is a group homomorphism which is clearly injective.
+Note that \(\mathbf{R}^3\) is abelian, and therefore so is the image of \(U\);
+this is also clear from the calculation above.
+<p>
+When looking at our Galilean space as \(\mathbf{R}^4\), if \(\mathbf{v}\) is the (column) vector \((v_1,v_2,v_3)\)
+then \(U_\mathbf{v}\) is represented by the matrix
+$$
+\begin{pmatrix}
+1 & 0 & 0 & 0 \\
+v_1 & 1 & 0 & 0 \\
+v_2 & 0 & 1 & 0 \\
+v_3 & 0 & 0 & 1 \\
+\end{pmatrix}
+$$
+This gives an embedding of \(\mathbf{R}^3\) in \(\mathbf{GL}_4(\mathbf{R})\). The same extends more
+generally to an embedding of \(\mathbf{R}^n\) in \(\mathbf{GL}_{n+1}(\mathbf{R})\).
+<h4>Do basic Galilean transformations commute?</h4>
+$$ U_{\mathbf{v}}\circ T_{(s, \mathbf{s})}(t, \mathbf{x}) = U_{\mathbf{v}}(t+s, \mathbf{x}+\mathbf{s}) = \left(t+s, \mathbf{x}+\mathbf{s}+\mathbf{v}\cdot(t+s)\right) $$
+whereas
+$$ T_{(s, \mathbf{s})}\circ U_{\mathbf{v}}(t, \mathbf{x}) = T_{(s, \mathbf{s})}(t,\mathbf{x}+\mathbf{v}t) = (t+s,\mathbf{x}+\mathbf{s}+\mathbf{v}t) $$
+so that
+$$ U_{\mathbf{v}}\circ T_{(s, \mathbf{s})}(t, \mathbf{x}) = T_{(s, \mathbf{s})}\circ U_{\mathbf{v}}(t, \mathbf{x}) + (0, \mathbf{v}s)
+$$
+Thus in general \(U_{\mathbf{v}}\) and \(T_{(s, \mathbf{s})}\) do not commute.
+They do commute, however, in the special case where \(s=0\), i.e. when there's no shift (translation) in the time dimension:
+$$U_{\mathbf{v}}\circ T_{(0, \mathbf{s})} = T_{(0, \mathbf{s})}\circ U_{\mathbf{v}}$$
+(The transformations also commute when \(\mathbf{v}=\mathbf{0}\), though this case is trivial as \(U_\mathbf{0}\)
+is the identity transformation).
+<p>
+Continuing to develop the formulae above we get:
+\begin{align}
+U_{\mathbf{v}}\circ T_{(s, \mathbf{s})}(t, \mathbf{x}) & = \left(t+s, \mathbf{x}+\mathbf{s}+\mathbf{v}\cdot(t+s)\right) \\
+ & = T_{(0, \mathbf{s})}\left(t+s, \mathbf{x}+\mathbf{v}\cdot(t+s)\right) \\
+ & = T_{(0, \mathbf{s})}\circ U_{\mathbf{v}}(t+s, \mathbf{x}) \\
+ & = T_{(0, \mathbf{s})}\circ U_{\mathbf{v}}\circ T_{(s, \mathbf{0})}(t, \mathbf{x})
+\end{align}
+and
+\begin{align}
+T_{(s, \mathbf{s})}\circ U_{\mathbf{v}}(t, \mathbf{x}) & = (t+s,\mathbf{x}+\mathbf{s}+\mathbf{v}t) \\
+& = T_{(s, \mathbf{0})}(t,\mathbf{x}+\mathbf{s}+\mathbf{v}t) \\
+& = T_{(s, \mathbf{0})}\circ U_{\mathbf{v}}(t,\mathbf{x}+\mathbf{s}) \\
+& = T_{(s, \mathbf{0})}\circ U_{\mathbf{v}}\circ T_{(0, \mathbf{s})}(t,\mathbf{x})
+\end{align}
+Thus the following relations hold:
+\begin{align}
+U_{\mathbf{v}}\circ T_{(s, \mathbf{s})} & = T_{(0, \mathbf{s})}\circ U_{\mathbf{v}}\circ T_{(s, \mathbf{0})} \\
+T_{(s, \mathbf{s})}\circ U_{\mathbf{v}} & = T_{(s, \mathbf{0})}\circ U_{\mathbf{v}}\circ T_{(0, \mathbf{s})}
+\end{align}
+</div>
+</body>
+</html>
