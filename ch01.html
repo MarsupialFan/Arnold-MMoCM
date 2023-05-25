@@ -48,7 +48,10 @@ is a group homomorphism which is clearly injective.
 Note that \(\mathbf{R}^3\) is abelian, and therefore so is the image of \(U\);
 this is also clear from the calculation above.
 <p>
-When looking at our Galilean space as \(\mathbf{R}^4\), if \(\mathbf{v}\) is the (column) vector \((v_1,v_2,v_3)\)
+From this we also get \(U_\mathbf{v}^{-1}=U_\mathbf{-v}\).
+<p>
+When looking at our Galilean space \(\mathbf{R}\times\mathbf{R}^3\) as \(\mathbf{R}^4\),
+if \(\mathbf{v}\in\mathbf{R}^3\) is the (column) vector \((v_1,v_2,v_3)\)
 then \(U_\mathbf{v}\) is represented by the matrix
 $$
 \begin{pmatrix}
@@ -60,6 +63,8 @@ v_3 & 0 & 0 & 1 \\
 $$
 This gives an embedding of \(\mathbf{R}^3\) in \(\mathbf{GL}_4(\mathbf{R})\). The same extends more
 generally to an embedding of \(\mathbf{R}^n\) in \(\mathbf{GL}_{n+1}(\mathbf{R})\).
+<h4>How do translation transformations behave?</h4>
+<h4>How do rotation transformations behave?</h4>
 <h4>Do basic Galilean transformations commute?</h4>
 $$ U_{\mathbf{v}}\circ T_{(s, \mathbf{s})}(t, \mathbf{x}) = U_{\mathbf{v}}(t+s, \mathbf{x}+\mathbf{s}) = \left(t+s, \mathbf{x}+\mathbf{s}+\mathbf{v}\cdot(t+s)\right) $$
 whereas
@@ -92,6 +97,31 @@ Thus the following relations hold:
 U_{\mathbf{v}}\circ T_{(s, \mathbf{s})} & = T_{(0, \mathbf{s})}\circ U_{\mathbf{v}}\circ T_{(s, \mathbf{0})} \\
 T_{(s, \mathbf{s})}\circ U_{\mathbf{v}} & = T_{(s, \mathbf{0})}\circ U_{\mathbf{v}}\circ T_{(0, \mathbf{s})}
 \end{align}
+
+<h4>All Galilean structures are isomorphic</h4>
+Let \((X,\mathbf{R}^4,\phi)\) and \((Y,\mathbf{R}^4,\psi)\) be two Galilean structures.
+Pick any two point \(x_0\in X\) and \(y_0\in Y\).
+We define a map \(\chi:X\rightarrow Y\) as follows:
+<ul>
+    <li>\(\chi(x_0) = y_0\)</li>
+    <li>
+        Given \(x\in X\) there is a unique \(v\in\mathbf{R}^4\) such that \(x=x_0+v\)
+        (that is \(x=\phi_v(x_0)\)),
+        and we define \(\chi(x) = y_0+v\)
+        (i.e. \(\chi(x)=\psi_v(y_0)\)).
+        Note that for \(x=x_0\) this agrees with the definition above,
+        that is \(v=0\) and therefore \(\chi(x_0) = y_0\).
+    </li>
+</ul>
+The map \(\chi\) is an isomorphism of Galilean structures.
+Indeed, by construction the diagram
+\begin{CD}
+\mathbf{R}^4 @>id>> \mathbf{R}^4\\
+@V \phi V V @VV \psi V\\
+X @>>\chi> Y
+\end{CD}
+commutes.
+
 </div>
 </body>
 </html>
