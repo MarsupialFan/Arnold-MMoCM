@@ -19,6 +19,22 @@
 <h3>A Notation</h3>
 We will denote an element of \(\mathbf{R}\times\mathbf{R}^n\) as \((x,\mathbf{x})\)
 where \(x\in\mathbf{R}\) and \(\mathbf{x}\in\mathbf{R}^n\).
+<p></p>
+<b>Claim</b> Let \(\mathbf{A}\) be an affine \(n\)-space and \(a_0,a_1,a_2\in\mathbf{A}\). Then
+$$(a_2-a_1) = (a_2-a_0)-(a_1-a_0)$$
+in \(\mathbf{R}^n\).
+<p></p>
+Proof - by definition \((a_1-a_0)\) is the (unique) element of \(\mathbf{R}^n\) such that
+\(a_0+(a_1-a_0)=a_1\). Similarly \(a_0+(a_2-a_0)=a_2\) and \(a_1+(a_2-a_1)=a_2\).
+We therefore get
+\begin{align}
+a_0+\left((a_2-a_1)+(a_1-a_0)\right) & = a_0+\left((a_1-a_0)+(a_2-a_1)\right) \\
+& = \left(a_0+(a_1-a_0)\right)+(a_2-a_1) \\
+& = a_1+(a_2-a_1) \\
+& = a_2
+\end{align}
+so by uniqueness we get
+\(a_2-a_0=(a_2-a_1)+(a_1-a_0)\). This gives the desired result.
 <h3>B Galilean structure</h3>
 We will use a different notation for the basic Galilean (motion, translation, and rotation)
 transformations than the one used in the book in order to make the parameters more explicit:
@@ -64,6 +80,8 @@ $$
 This gives an embedding of \(\mathbf{R}^3\) in \(\mathbf{GL}_4(\mathbf{R})\). The same extends more
 generally to an embedding of \(\mathbf{R}^n\) in \(\mathbf{GL}_{n+1}(\mathbf{R})\).
 <h4>How do translation transformations behave?</h4>
+Clearly \(T_{(s+s',\mathbf{s}+\mathbf{s'})} = T_{(s,\mathbf{s})}+T_{(s',\mathbf{s'})}\)
+and \(T_{(s,\mathbf{s})}^{-1}=T_{(-s,\mathbf{-s})}\).
 <h4>How do rotation transformations behave?</h4>
 <h4>Do basic Galilean transformations commute?</h4>
 $$ U_{\mathbf{v}}\circ T_{(s, \mathbf{s})}(t, \mathbf{x}) = U_{\mathbf{v}}(t+s, \mathbf{x}+\mathbf{s}) = \left(t+s, \mathbf{x}+\mathbf{s}+\mathbf{v}\cdot(t+s)\right) $$
@@ -99,22 +117,25 @@ T_{(s, \mathbf{s})}\circ U_{\mathbf{v}} & = T_{(s, \mathbf{0})}\circ U_{\mathbf{
 \end{align}
 
 <h4>All Galilean structures are isomorphic</h4>
-Let \((X,\mathbf{R}^4,\phi)\) and \((Y,\mathbf{R}^4,\psi)\) be two Galilean structures.
+Let \(X\) and \(Y\) be two Galilean structures.
 Pick any two point \(x_0\in X\) and \(y_0\in Y\).
 We define a map \(\chi:X\rightarrow Y\) as follows:
 <ul>
     <li>\(\chi(x_0) = y_0\)</li>
     <li>
-        Given \(x\in X\) there is a unique \(v\in\mathbf{R}^4\) such that \(x=x_0+v\)
-        (that is \(x=\phi_v(x_0)\)),
-        and we define \(\chi(x) = y_0+v\)
-        (i.e. \(\chi(x)=\psi_v(y_0)\)).
+        Given \(x\in X\) there is a unique \(v\in\mathbf{R}^4\) such that \(x=x_0+v\),
+        and we define \(\chi(x) = y_0+v\).
         Note that for \(x=x_0\) this agrees with the definition above,
         that is \(v=0\) and therefore \(\chi(x_0) = y_0\).
     </li>
 </ul>
 The map \(\chi\) is an isomorphism of Galilean structures.
-Indeed, by construction the diagram
+Indeed, by definition of affine spaces \(\chi\) is one-to-one and by construction satisfies
+\(\chi(x)-\chi(x_0)=x-x_0\).
+It follows then that \(\chi(x')-\chi(x)=x'-x\) for every \(x,x'\in\mathbf{A}\), 
+so \(\chi\) preserves the Galilean structure.
+<p></p>
+by construction the diagram
 \begin{CD}
 \mathbf{R}^4 @>id>> \mathbf{R}^4\\
 @V \phi V V @VV \psi V\\
