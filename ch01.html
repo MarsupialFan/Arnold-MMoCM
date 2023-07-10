@@ -10,6 +10,12 @@
     <title>Chapter 1: Experimental facts</title>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <!-- Turn \phi into \varphi; for now this appears not to work...
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({TeX: {Macros: {phi:"\\varphi"}}});
+    </script>
+    -->
 </head>
 <body>
 <div class="content">
@@ -19,6 +25,7 @@
     \def\Rto#1{{\R^{#1}}}
     \def\Rthree{{\Rto{3}}}
     \def\Rn{{\Rto{n}}}
+    \def\RN{{\Rto{N}}}
     \def\GalileanSpace#1{{\R\times\R^{#1}}}
     \def\G{{\GalileanSpace{3}}}
     \def\GN{{\GalileanSpace{N}}}
@@ -200,14 +207,38 @@ where the vertical arrows send \((t,\mathbf{x_1}, \dots, \mathbf{x_n})\) to
 
 <h3>D Newton's equations</h3>
 
-<p></p>
-by construction the diagram
-\begin{CD}
-\mathbf{R}^4 @>id>> \mathbf{R}^4\\
-@V \phi V V @VV \psi V\\
-X @>>\chi> Y
-\end{CD}
-commutes.
+<h3>E Constraints imposed by the principle of relativity</h3>
+<h4>Example 1</h4>
+Assume that \(\bfx=\varphi(t)\) is a solution of equation (1)
+and denote by \(\varphi_s\) the function mapping \(t\mapsto \varphi(t+s)\).
+Then, as discussed in the book, \(\bfx=\varphi_s(t)\) is a solution of equation (1) as well, that is
+$$\ddot{\varphi}_s(t)=\mathbf{F}\left(\dot{\varphi}_s(t), \varphi_s(t), t\right).$$
+From the chain rule we get
+\(\dot{\varphi}_s(t)=\dot{\varphi}(t+s)\)
+and
+\(\ddot{\varphi}_s(t)=\ddot{\varphi}(t+s)\).
+Plugging these identities into the differential equation satisfied by \(\varphi_s\) above we get:
+$$\ddot{\varphi}(t+s)=\mathbf{F}\left(\dot{\varphi}(t+s), \varphi(t+s), t\right).$$
+Changing variable \(T=t+s\) and using the chain rule this transforms into
+$$\ddot{\varphi}(T)=\mathbf{F}\left(\dot{\varphi}(T), \varphi(T), T-s\right).$$
+But \(\varphi(T)\) is also a solution of the differential equation, that is,
+$$\ddot{\varphi}(T)=\mathbf{F}\left(\dot{\varphi}(T), \varphi(T), T\right),$$
+and combining these two equations we see that
+$$\mathbf{F}\left(\dot{\varphi}(T), \varphi(T), T\right)=\mathbf{F}\left(\dot{\varphi}(T), \varphi(T), T-s\right).$$
+Now let \(\bfx_0,\dot{\bfx}_0\in\RN\) be two points of the form
+\(\bfx_0=\varphi(t_0),\dot{\bfx}_0=\dot{\varphi}(t_0)\)
+where \(\varphi\) is a solution of equation (1).
+Then for any number \(s\in\R\) we get:
+$$\mathbf{F}\left(\dot{\bfx}_0, \bfx_0, t_0\right)=\mathbf{F}\left(\dot{\bfx}_0, \bfx_0, t_0-s\right),$$
+which, from the definition of the derivative, implies that
+$$\left.\frac{d\mathbf{F}\left(\dot{\bfx}_0, \bfx_0, T\right)}{dT}\right|_{T=t_0}=0.$$
+Finally, from the theory of differential equations we know that for any triplet
+\((\dot{\bfx}_0, \bfx_0, t_0)\in\RN\times\RN\times\R\) there is a solution \(\varphi\)
+of equation (1) which satisfies \(\bfx_0=\varphi(t_0),\dot{\bfx}_0=\dot{\varphi}(t_0)\),
+and it follows that
+$$\left.\frac{d\mathbf{F}\left(\dot{\bfx}, \bfx, T\right)}{dT}\right|_{T=t}=0$$
+for every value of \(t\).
+That is, \(F\) does not depend on \(T\).
 
 </div>
 </body>
