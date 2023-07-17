@@ -20,7 +20,11 @@
 <body>
 <div class="content">
 \(
+    \def\angular#1{{\left<{#1}\right>}}
+    \def\bff{{\mathbf{f}}}
+    \def\bfr{{\mathbf{r}}}
     \def\bfx{{\mathbf{x}}}
+    \def\bfy{{\mathbf{y}}}
     \def\R{{\mathbf{R}}}
     \def\Rto#1{{\R^{#1}}}
     \def\Rthree{{\Rto{3}}}
@@ -240,6 +244,77 @@ $$\left.\frac{d\mathbf{F}\left(\dot{\bfx}, \bfx, T\right)}{dT}\right|_{T=t}=0$$
 for every value of \(t\).
 That is, \(F\) does not depend on \(T\).
 
+<h4>Example 2</h4>
+We start by looking at translations in 3d space.
+For simplicity when \(\bfr\in\Rthree\) we will abbreviate \(T_{(0,\bfr)}\) by \(T_\bfr\).
+Furthermore we will denote an \(N\)-vector \((\bfx_1,\dots,\bfx_n)\in\RN\) by \(\angular{\bfx_i}\).
+Recall that each \(\bfx_i\) is a 3-vector, that is \(\bfx_i\in\Rthree\) and \(N=3n\).
+<p></p>
+Let \(\bfx_i=\varphi_i(t)\) (\(i=1, 2, \dots, n)\) be a solution for equation (1).
+Let \(\bfr\in\Rthree\) be any translation vector and define \(\psi_i(t)=\varphi_i(t)+\bfr\).
+Then, as discussed in the text, \(\varphi_i(t)+\bfr\) (\(i=1, 2, \dots, n)\) is also
+a solution for (1).
+That is,
+$$
+\angular{\ddot{\varphi_i}(t)}=\mathbf{F}\left(\angular{\dot{\varphi_i}(t)}, \angular{\varphi_i(t)}, t\right)
+$$
+and
+$$
+\angular{\ddot{\psi_i}(t)}=\mathbf{F}\left(\angular{\dot{\psi_i}(t)}, \angular{\psi_i(t)}, t\right).
+$$
+But \(\dot{\psi_i}=\dot{\varphi_i}\) and \(\ddot{\psi_i}=\ddot{\varphi_i}\),
+so we get
+$$
+\mathbf{F}\left(\angular{\dot{\varphi_i}(t)}, \angular{\varphi_i(t)+\bfr}, t\right)=
+\mathbf{F}\left(\angular{\dot{\varphi_i}(t)}, \angular{\varphi_i(t)}, t\right).
+$$
+Now for every points \(\angular{\dot{\bfx}_i}, \angular{\bfx_i}\in\RN\) and \(t_0\in\R\)
+there's a solution \(\angular{\varphi_i}\) of equation (1) such that
+\(\varphi_i(t_0)=\bfx_i\) and \(\dot{\varphi_i}(t_0)=\dot{\bfx}_i\)
+for every \(i\).
+Combining these two results we get
+$$
+\mathbf{F}\left(\angular{\dot{\bfx}_i}, \angular{\bfx_i+\bfr}, t\right)=
+\mathbf{F}\left(\angular{\dot{\bfx}_i}, \angular{\bfx_i}, t\right) \tag{*}
+$$
+for every \(\angular{\dot{\bfx}_i}, \angular{\bfx_i}\in\RN\), \(t_0\in\R\), and \(\bfr\in\Rthree\).
+<p></p>
+Change coordinates as follows:
+$$
+\begin{aligned}
+\bfy_1 &= \bfx_1+\bfx_2+\cdots+\bfx_n,\\
+\bfy_i &= \bfx_i-\bfx_1\ \ \ \text{for}\ i=2, 3, \dots, n,
+\end{aligned}
+$$
+keeping the \(\dot{\bfx}_i\)'s and \(t\) intact.
+This indeed has an inverse:
+$$
+\begin{aligned}
+\bfx_1 & =\frac{1}{n}\left(\bfy_1-\sum_{i=2}^{n}\bfy_i\right)\\
+\bfx_i &= \bfy_i+\bfx_1\ \ \ \text{for}\ i=2, 3, \dots, n\text{.}
+\end{aligned}
+$$
+Now define \(\mathbf{G}\left(\angular{\dot{\bfx}_i}, \angular{\bfy_i}, t\right)=
+\mathbf{F}\left(\angular{\dot{\bfx}_i}, \angular{\bfx_i}, t\right)\)
+and let \(f_j\), \(g_j\) denote the \(j\)'th coordinate of \(\mathbf{F}\), \(\mathbf{G}\),
+respectively, for \(j=1, 3, \dots, N\).
+Let \(\mathbf{h}\in\Rthree\) be any vector and define \(\mathbf{r}=\frac{1}{n}\mathbf{h}\).
+Then using (*) we get 
+$$
+\begin{aligned}
+g_j\left(\angular{\dot{\bfx}_i}, \bfy_1+\mathbf{h}, \angular{\bfy_i}_{i=2}^{n}, t\right)
+& = f_j\left(\angular{\dot{\bfx}_i}, \angular{\bfx_i+\mathbf{r}}, t\right)\\
+& = f_j\left(\angular{\dot{\bfx}_i}, \angular{\bfx_i}, t\right)\\
+& = g_j\left(\angular{\dot{\bfx}_i}, \angular{\bfy_i}, t\right).
+\end{aligned}
+$$
+It follows, then, from the definition of derivative
+(applied to each one of the 3 coordinates of \(\bfy_1\) separately) that
+$$\frac{\partial g_j}{\partial\bfy_1}=0$$
+(as a 3-vector).
+This shows that \(\mathbf{G}\) does not depend on \(\bfy_1\),
+which in turn implies that \(\mathbf{F}\) depends only on the "relative coordinates" \(\{\bfx_k-\bfx_l\}.\)
+This proves the first part of the example.
 </div>
 </body>
 </html>
