@@ -24,6 +24,7 @@
     \def\bff{{\mathbf{f}}}
     \def\bfr{{\mathbf{r}}}
     \def\bfx{{\mathbf{x}}}
+    \def\bfv{{\mathbf{v}}}
     \def\bfy{{\mathbf{y}}}
     \def\R{{\mathbf{R}}}
     \def\Rto#1{{\R^{#1}}}
@@ -64,8 +65,8 @@ so by uniqueness we get
 We will use a different notation for the basic Galilean (motion, translation, and rotation)
 transformations than the one used in the book in order to make the parameters more explicit:
 <ul>
-<li>Uniform motion with velocity \(\mathbf{v}\in\Rthree\):
-    $$U_{\mathbf{v}}(t,\bfx) = g_1(t,\bfx) = (t,\bfx+\mathbf{v}t)$$
+<li>Uniform motion with velocity \(\bfv\in\Rthree\):
+    $$U_{\bfv}(t,\bfx) = g_1(t,\bfx) = (t,\bfx+\bfv t)$$
 </li>
 <li>Translation by a vector \((s,\mathbf{s})\in\G\):
     $$T_{(s,\mathbf{s})}(t,\bfx) = g_2(t,\bfx) = (t+s,\bfx+\mathbf{s})$$
@@ -77,25 +78,25 @@ transformations than the one used in the book in order to make the parameters mo
 <h4>Basic Galilean transformations</h4>
 <h5>Uniform motion Galilean transformations</h5>
 \begin{align}
-U_{\mathbf{v+w}}(t, \bfx) & = (t, \bfx+(\mathbf{v}+\mathbf{w})t) \\
-& = (t, \bfx + \mathbf{v}t + \mathbf{w}t) \\
-& = U_{\mathbf{v}}(t, \bfx + \mathbf{w}t) \\
-& = U_{\mathbf{v}}\circ U_{\mathbf{w}} (t, \bfx)
+U_{\mathbf{v+w}}(t, \bfx) & = (t, \bfx+(\bfv+\mathbf{w})t) \\
+& = (t, \bfx + \bfv t + \mathbf{w}t) \\
+& = U_{\bfv}(t, \bfx + \mathbf{w}t) \\
+& = U_{\bfv}\circ U_{\mathbf{w}} (t, \bfx)
 \end{align}
 which implies that
 \begin{align}
 U: \Rthree & \rightarrow Galilean\left(\G\right) \\
-\mathbf{v} & \mapsto U_{\mathbf{v}}
+\bfv & \mapsto U_{\bfv}
 \end{align}
 is a group homomorphism which is clearly injective.
 Note that \(\Rthree\) is abelian, and therefore so is the image of \(U\);
 this is also clear from the calculation above.
 <p>
-From this we also get \(U_\mathbf{v}^{-1}=U_\mathbf{-v}\).
+From this we also get \(U_\bfv^{-1}=U_\mathbf{-v}\).
 <p>
 When looking at our Galilean space \(\G\) as \(\Rto{4}\),
-if \(\mathbf{v}\in\Rthree\) is the (column) vector \((v_1,v_2,v_3)\)
-then \(U_\mathbf{v}\) is represented by the matrix
+if \(\bfv\in\Rthree\) is the (column) vector \((v_1,v_2,v_3)\)
+then \(U_\bfv\) is represented by the matrix
 $$
 \begin{pmatrix}
 1 & 0 & 0 & 0 \\
@@ -119,36 +120,36 @@ Note, however, that with the exception of \((s,\mathbf{s})=(0,\mathbf{0})\),
 <h5>Rotation Galilean transformations</h5>
 
 <h5>Do uniform motion and translation transformations commute?</h5>
-$$ U_{\mathbf{v}}\circ T_{(s, \mathbf{s})}(t, \bfx) = U_{\mathbf{v}}(t+s, \bfx+\mathbf{s}) = \left(t+s, \bfx+\mathbf{s}+\mathbf{v}\cdot(t+s)\right) $$
+$$ U_{\bfv}\circ T_{(s, \mathbf{s})}(t, \bfx) = U_{\bfv}(t+s, \bfx+\mathbf{s}) = \left(t+s, \bfx+\mathbf{s}+\bfv\cdot(t+s)\right) $$
 whereas
-$$ T_{(s, \mathbf{s})}\circ U_{\mathbf{v}}(t, \bfx) = T_{(s, \mathbf{s})}(t,\bfx+\mathbf{v}t) = (t+s,\bfx+\mathbf{s}+\mathbf{v}t) $$
+$$ T_{(s, \mathbf{s})}\circ U_{\bfv}(t, \bfx) = T_{(s, \mathbf{s})}(t,\bfx+\bfv t) = (t+s,\bfx+\mathbf{s}+\bfv t) $$
 so that
-$$ U_{\mathbf{v}}\circ T_{(s, \mathbf{s})}(t, \bfx) = T_{(s, \mathbf{s})}\circ U_{\mathbf{v}}(t, \bfx) + (0, \mathbf{v}s)
+$$ U_{\bfv}\circ T_{(s, \mathbf{s})}(t, \bfx) = T_{(s, \mathbf{s})}\circ U_{\bfv}(t, \bfx) + (0, \bfv s)
 $$
-Thus in general \(U_{\mathbf{v}}\) and \(T_{(s, \mathbf{s})}\) do not commute.
+Thus in general \(U_{\bfv}\) and \(T_{(s, \mathbf{s})}\) do not commute.
 They do commute, however, in the special case where \(s=0\), i.e. when there's no shift (translation) in the time dimension:
-$$U_{\mathbf{v}}\circ T_{(0, \mathbf{s})} = T_{(0, \mathbf{s})}\circ U_{\mathbf{v}}$$
-(The transformations also commute when \(\mathbf{v}=\mathbf{0}\), though this case is trivial as \(U_\mathbf{0}\)
+$$U_{\bfv}\circ T_{(0, \mathbf{s})} = T_{(0, \mathbf{s})}\circ U_{\bfv}$$
+(The transformations also commute when \(\bfv=\mathbf{0}\), though this case is trivial as \(U_\mathbf{0}\)
 is the identity transformation).
 <p>
 Continuing to develop the formulae above we get:
 \begin{align}
-U_{\mathbf{v}}\circ T_{(s, \mathbf{s})}(t, \bfx) & = \left(t+s, \bfx+\mathbf{s}+\mathbf{v}\cdot(t+s)\right) \\
- & = T_{(0, \mathbf{s})}\left(t+s, \bfx+\mathbf{v}\cdot(t+s)\right) \\
- & = T_{(0, \mathbf{s})}\circ U_{\mathbf{v}}(t+s, \bfx) \\
- & = T_{(0, \mathbf{s})}\circ U_{\mathbf{v}}\circ T_{(s, \mathbf{0})}(t, \bfx)
+U_{\bfv}\circ T_{(s, \mathbf{s})}(t, \bfx) & = \left(t+s, \bfx+\mathbf{s}+\bfv\cdot(t+s)\right) \\
+ & = T_{(0, \mathbf{s})}\left(t+s, \bfx+\bfv\cdot(t+s)\right) \\
+ & = T_{(0, \mathbf{s})}\circ U_{\bfv}(t+s, \bfx) \\
+ & = T_{(0, \mathbf{s})}\circ U_{\bfv}\circ T_{(s, \mathbf{0})}(t, \bfx)
 \end{align}
 and
 \begin{align}
-T_{(s, \mathbf{s})}\circ U_{\mathbf{v}}(t, \bfx) & = (t+s,\bfx+\mathbf{s}+\mathbf{v}t) \\
-& = T_{(s, \mathbf{0})}(t,\bfx+\mathbf{s}+\mathbf{v}t) \\
-& = T_{(s, \mathbf{0})}\circ U_{\mathbf{v}}(t,\bfx+\mathbf{s}) \\
-& = T_{(s, \mathbf{0})}\circ U_{\mathbf{v}}\circ T_{(0, \mathbf{s})}(t,\bfx)
+T_{(s, \mathbf{s})}\circ U_{\bfv}(t, \bfx) & = (t+s,\bfx+\mathbf{s}+\bfv t) \\
+& = T_{(s, \mathbf{0})}(t,\bfx+\mathbf{s}+\bfv t) \\
+& = T_{(s, \mathbf{0})}\circ U_{\bfv}(t,\bfx+\mathbf{s}) \\
+& = T_{(s, \mathbf{0})}\circ U_{\bfv}\circ T_{(0, \mathbf{s})}(t,\bfx)
 \end{align}
 Thus the following relations hold:
 \begin{align}
-U_{\mathbf{v}}\circ T_{(s, \mathbf{s})} & = T_{(0, \mathbf{s})}\circ U_{\mathbf{v}}\circ T_{(s, \mathbf{0})} \\
-T_{(s, \mathbf{s})}\circ U_{\mathbf{v}} & = T_{(s, \mathbf{0})}\circ U_{\mathbf{v}}\circ T_{(0, \mathbf{s})}
+U_{\bfv}\circ T_{(s, \mathbf{s})} & = T_{(0, \mathbf{s})}\circ U_{\bfv}\circ T_{(s, \mathbf{0})} \\
+T_{(s, \mathbf{s})}\circ U_{\bfv} & = T_{(s, \mathbf{0})}\circ U_{\bfv}\circ T_{(0, \mathbf{s})}
 \end{align}
 
 <h5>Do translation and rotation transformations commute?</h5>
@@ -166,9 +167,9 @@ whereas rotations operate on the \(\Rthree\) part of \(\G\).
 
 <h5>Do uniform motion and rotation transformations commute?</h5>
 \begin{align}
-R_G\circ U_{\mathbf{v}}(t, \bfx)  & = R_G(t, \bfx+\mathbf{v}t) \\
-& = \left(t, G(\bfx+\mathbf{v}t)\right) \\
-& = \left(t, G(\bfx)+G(\mathbf{v}t)\right) \\
+R_G\circ U_{\bfv}(t, \bfx)  & = R_G(t, \bfx+\bfv t) \\
+& = \left(t, G(\bfx+\bfv t)\right) \\
+& = \left(t, G(\bfx)+G(\bfv t)\right) \\
 & =
 \end{align}
 
