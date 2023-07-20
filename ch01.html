@@ -315,6 +315,60 @@ $$\frac{\partial g_j}{\partial\bfy_1}=0$$
 This shows that \(\mathbf{G}\) does not depend on \(\bfy_1\),
 which in turn implies that \(\mathbf{F}\) depends only on the "relative coordinates" \(\{\bfx_k-\bfx_l\}.\)
 This proves the first part of the example.
+<p></p>
+We turn now to the second part of the example,
+namely to the case of a uniform motion with velocity \(\bfv\in\Rthree\).
+Let \(\bfx_i=\varphi_i(t)\) (\(i=1, 2, \dots, n)\) be a solution for equation (1):
+$$
+\angular{\ddot{\varphi_i}(t)}=\mathbf{F}\left(\angular{\dot{\varphi_i}(t)}, \{\varphi_i(t)-\varphi_j(t)\}\right).
+$$
+Here we used the previous results.
+Let \(\bfv\in\Rthree\) be any uniform motion vector and define \(\psi_i(t)=\varphi_i(t)+\bfv t\)
+for \(i=1, 2, \dots, n\).
+Then \(\{\psi_i(t)\}\) is also a solution for (1):
+$$
+\angular{\ddot{\psi_i}(t)}=\mathbf{F}\left(\angular{\dot{\psi_i}(t)}, \{\psi_i(t)-\psi_j(t)\}\right).
+$$
+Since \(\psi_i(t)-\psi_j(t)=\varphi_i(t)-\varphi_j(t)\),
+\(\dot{\psi_i}=\dot{\varphi_i}+\bfv\), and \(\ddot{\psi_i}=\ddot{\varphi_i}\) we get
+$$
+\mathbf{F}\left(\angular{\dot{\varphi_i}(t)+\bfv}, \{\varphi_i(t)-\varphi_j(t)\}\right)=
+\mathbf{F}\left(\angular{\dot{\varphi_i}(t)}, \{\varphi_i(t)-\varphi_j(t)\}\right),
+$$
+and as before the theory of ordinary differential equations shows that
+$$
+\mathbf{F}\left(\angular{\dot{\bfx}_i+\bfv}, \{\bfx_i-\bfx_j\}\right)=
+\mathbf{F}\left(\angular{\dot{\bfx}_i}, \{\bfx_i-\bfx_j\}\right)
+$$
+for every \(\angular{\dot{\bfx}_i}, \angular{\bfx_i}\in\RN\) and \(\bfv\in\Rthree\).
+We follow a line of reasoning similar to that of the first part above
+applied to the following change of coordinates:
+$$
+\begin{aligned}
+\dot{\bfy}_1 &= \dot{\bfx}_1+\dot{\bfx}_2+\cdots+\dot{\bfx}_n,\\
+\dot{\bfy}_i &= \dot{\bfx}_i-\dot{\bfx}_1\ \ \ \text{for}\ i=2, 3, \dots, n,
+\end{aligned}
+$$
+The \(\bfx_i\)'s are left unchanged.
+Define \(\mathbf{G}\left(\angular{\dot{\bfy}_i}, \{\bfx_i-\bfx_j\}\right)=
+\mathbf{F}\left(\angular{\dot{\bfx}_i}, \{\bfx_i-\bfx_j\}\right)\)
+and let \(f_k\), \(g_k\), be the \(k\)'th coordinate of \(\mathbf{F}\), \(\mathbf{G},\) respectively,
+\(\mathbf{h}\in\Rthree\), and \(\mathbf{r}=\frac{1}{n}\mathbf{h}\) be as in the first part.
+Then
+$$
+\begin{aligned}
+g_k\left(\dot{\bfy}_1+\mathbf{h}, \angular{\dot{\bfy}_i}_{i=2}^{n}, \{\bfx_i-\bfx_j\}\right)
+& = f_k\left(\angular{\dot{\bfx}_i+\mathbf{r}}, \{\bfx_i-\bfx_j\}\right)\\
+& = f_k\left(\angular{\dot{\bfx}_i}, \{\bfx_i-\bfx_j\}\right)\\
+& = g_k\left(\angular{\dot{\bfy}_i}, \{\bfx_i-\bfx_j\}\right).
+\end{aligned}
+$$
+Thus when calculating the 3-vector derivative of \(g_k\) with respect to \(\dot{\bfy}_1\) we get
+$$\frac{\partial g_j}{\partial\dot{\bfy}_1}=0.$$
+So \(\mathbf{G}\) does not depend on \(\dot{\bfy}_1\),
+and therefore \(\mathbf{F}\) depends only on the "relative coordinates"
+\(\{\dot{\bfx}_k-\dot{\bfx}_l\}.\)
+This concludes the proof of example 2.
 </div>
 </body>
 </html>
