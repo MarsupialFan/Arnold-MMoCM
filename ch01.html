@@ -91,9 +91,8 @@ U: \Rthree & \rightarrow Galilean\left(\G\right) \\
 is a group homomorphism which is clearly injective.
 Note that \(\Rthree\) is abelian, and therefore so is the image of \(U\);
 this is also clear from the calculation above.
-<p>
 From this we also get \(U_\bfv^{-1}=U_\mathbf{-v}\).
-<p>
+<p></p>
 When looking at our Galilean space \(\G\) as \(\Rto{4}\),
 if \(\bfv\in\Rthree\) is the (column) vector \((v_1,v_2,v_3)\)
 then \(U_\bfv\) is represented by the matrix
@@ -112,45 +111,39 @@ The same extends more generally to an embedding of \(\Rn\) in \(\mathbf{GL}_{n+1
 Clearly \(T_{(s+s',\mathbf{s}+\mathbf{s'})} = T_{(s,\mathbf{s})}+T_{(s',\mathbf{s'})}\)
 and \(T_{(s,\mathbf{s})}^{-1}=T_{(-s,\mathbf{-s})}\).
 In particular the map \(T:(s,\mathbf{s})\mapsto T_(s,\mathbf{s})\) is a group homomorphism, in fact a monomorphism,
-embedding \(\G\) in \(Galilean\left(\G\right)\).
-<p>
-Note, however, that with the exception of \((s,\mathbf{s})=(0,\mathbf{0})\),
+embedding \(\G\) as an abelian subgroup of \(Galilean\left(\G\right)\).
+Note, however, that with the exception of \(T_{(0,\mathbf{0})}\),
 \(T_(s,\mathbf{s})\) is not a linear transformation as it does not preserve the origin.
 
 <h5>Rotation Galilean transformations</h5>
+The map \(G\mapsto R_G\) is an embedding of \(\mathbf{O}_3(\R)\) in \(Galilean\left(\G\right)\).
+The image of this map does consist of linear transformations with \(G\) mapped to the matrix
+$$
+\begin{pmatrix}
+1 & 0 \\
+0 & G \\
+\end{pmatrix}
+$$
+viewed as an element of \(\mathbf{GL}(\G)\).
 
 <h5>Do uniform motion and translation transformations commute?</h5>
 $$ U_{\bfv}\circ T_{(s, \mathbf{s})}(t, \bfx) = U_{\bfv}(t+s, \bfx+\mathbf{s}) = \left(t+s, \bfx+\mathbf{s}+\bfv\cdot(t+s)\right) $$
 whereas
 $$ T_{(s, \mathbf{s})}\circ U_{\bfv}(t, \bfx) = T_{(s, \mathbf{s})}(t,\bfx+\bfv t) = (t+s,\bfx+\mathbf{s}+\bfv t) $$
 so that
-$$ U_{\bfv}\circ T_{(s, \mathbf{s})}(t, \bfx) = T_{(s, \mathbf{s})}\circ U_{\bfv}(t, \bfx) + (0, \bfv s)
-$$
-Thus in general \(U_{\bfv}\) and \(T_{(s, \mathbf{s})}\) do not commute.
-They do commute, however, in the special case where \(s=0\), i.e. when there's no shift (translation) in the time dimension:
-$$U_{\bfv}\circ T_{(0, \mathbf{s})} = T_{(0, \mathbf{s})}\circ U_{\bfv}$$
-(The transformations also commute when \(\bfv=\mathbf{0}\), though this case is trivial as \(U_\mathbf{0}\)
-is the identity transformation).
-<p>
-Continuing to develop the formulae above we get:
-\begin{align}
-U_{\bfv}\circ T_{(s, \mathbf{s})}(t, \bfx) & = \left(t+s, \bfx+\mathbf{s}+\bfv\cdot(t+s)\right) \\
- & = T_{(0, \mathbf{s})}\left(t+s, \bfx+\bfv\cdot(t+s)\right) \\
- & = T_{(0, \mathbf{s})}\circ U_{\bfv}(t+s, \bfx) \\
- & = T_{(0, \mathbf{s})}\circ U_{\bfv}\circ T_{(s, \mathbf{0})}(t, \bfx)
-\end{align}
-and
-\begin{align}
-T_{(s, \mathbf{s})}\circ U_{\bfv}(t, \bfx) & = (t+s,\bfx+\mathbf{s}+\bfv t) \\
-& = T_{(s, \mathbf{0})}(t,\bfx+\mathbf{s}+\bfv t) \\
-& = T_{(s, \mathbf{0})}\circ U_{\bfv}(t,\bfx+\mathbf{s}) \\
-& = T_{(s, \mathbf{0})}\circ U_{\bfv}\circ T_{(0, \mathbf{s})}(t,\bfx)
-\end{align}
-Thus the following relations hold:
-\begin{align}
-U_{\bfv}\circ T_{(s, \mathbf{s})} & = T_{(0, \mathbf{s})}\circ U_{\bfv}\circ T_{(s, \mathbf{0})} \\
-T_{(s, \mathbf{s})}\circ U_{\bfv} & = T_{(s, \mathbf{0})}\circ U_{\bfv}\circ T_{(0, \mathbf{s})}
-\end{align}
+$$ U_{\bfv}\circ T_{(s, \mathbf{s})}=T_{(0, \bfv s)}\circ T_{(s, \mathbf{s})}\circ U_{\bfv}.$$
+Thus \(U_{\bfv}\) and \(T_{(s, \mathbf{s})}\) commute only when \(\bfv s = 0\),
+that is when either \(s=0\) (no shift in the time dimension) or \(\bfv=\mathbf{0}\) (the trivial case).
+<p></p>
+Using this observation we can construct other identities, e.g.
+$$\displaylines{
+    U_{\bfv}\circ T_{(s, \mathbf{s})}
+    = U_{\bfv}\circ T_{(0, \mathbf{s})}\circ T_{(s, \mathbf{0})}
+    = T_{(0, \mathbf{s})}\circ U_{\bfv}\circ T_{(s, \mathbf{0})}\\
+    T_{(s, \mathbf{s})}\circ U_{\bfv}
+    = T_{(s, \mathbf{0})}\circ T_{(0, \mathbf{s})}\circ U_{\bfv}
+    = T_{(s, \mathbf{0})}\circ U_{\bfv}\circ T_{(0, \mathbf{s})}.
+}$$
 
 <h5>Do translation and rotation transformations commute?</h5>
 \begin{align}
@@ -160,8 +153,8 @@ R_G\circ T_{(s, \mathbf{s})}(t, \bfx) & = R_G(t+s, \bfx+\mathbf{s}) \\
 & = T_{(s, \mathbf{0})} \circ R_G(t, \bfx+\mathbf{s}) \\
 & = T_{(s, \mathbf{0})} \circ R_G \circ T_{(0, \mathbf{s})}(t, \bfx)
 \end{align}
-Note that time-translation and rotation transformations do commute:
-$$R_G\circ T_{(s, \mathbf{0})}(t, \bfx) = T_{(s, \mathbf{0})} \circ R_G(t, \bfx)$$
+Note that time-translation (i.e. when \(\mathbf{s}=\mathbf{0})\) and rotation transformations do commute:
+$$R_G\circ T_{(s, \mathbf{0})} = T_{(s, \mathbf{0})} \circ R_G$$
 This is expected because time-translations operate on the \(\R\) part of \(\G\)
 whereas rotations operate on the \(\Rthree\) part of \(\G\).
 
@@ -170,9 +163,11 @@ whereas rotations operate on the \(\Rthree\) part of \(\G\).
 R_G\circ U_{\bfv}(t, \bfx)  & = R_G(t, \bfx+\bfv t) \\
 & = \left(t, G(\bfx+\bfv t)\right) \\
 & = \left(t, G(\bfx)+G(\bfv t)\right) \\
-& =
+& = U_{G(\bfv)}\left(t,G(\bfx)\right) \\
+& = U_{G(\bfv)}\circ R_G(t,\bfx).
 \end{align}
-
+Note that \(R_G\) and \(U_{\bfv}\) do commute when \(\bfv\) is a fixed-point of \(G\).
+This can happen non-trivially when \(G\) is a reflection along the line passing through \(\bfv\).
 <h4>
 PROBLEM. Every galilean transformation of \(\G\) can be written uniquely way as the composition of a rotation, a translation,
 and a uniform motion
