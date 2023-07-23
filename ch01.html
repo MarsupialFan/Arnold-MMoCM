@@ -23,6 +23,7 @@
     \def\angular#1{{\left<{#1}\right>}}
     \def\bff{{\mathbf{f}}}
     \def\bfr{{\mathbf{r}}}
+    \def\bfs{{\mathbf{s}}}
     \def\bfx{{\mathbf{x}}}
     \def\bfv{{\mathbf{v}}}
     \def\bfy{{\mathbf{y}}}
@@ -61,22 +62,52 @@ a_0+\left((a_2-a_1)+(a_1-a_0)\right) & = a_0+\left((a_1-a_0)+(a_2-a_1)\right) \\
 \end{align}
 so by uniqueness we get
 \(a_2-a_0=(a_2-a_1)+(a_1-a_0)\). This gives the desired result.
+
 <h3>B Galilean structure</h3>
+It is important to note that a galilean transformation does not necessarily preserve the affine structure.
+That is, a galilean transformation on a galilean space \(\mathbf{A}^4\) might not commute with parallel
+displacements.
+E.g. as we will see below
+in the case of the galilean space \(\G\)  uniform motion and rotation galilean transformations
+do not always commute with the parallel displacements (which are the translations \(T_{(s,\bfs)}\)).
+Thus in order for \(g:\mathbf{A}^4\rightarrow\mathbf{A}^4\) to be a galilean transformation it
+needs to statisfy the following two conditions:
+<ul>
+    <li>It must preserve time intervals: \(t(g(a),g(b))=t(a,b)\) for every \(a,b\in\mathbf{A}^4\).</li>
+    <li>It must preserve distances between simultaneous events: \(\rho(g(a),g(b))=\rho(a,b)\)
+        for every two simultaneous events \(a,b\in\mathbf{A}^3\).
+        Note that the distance \(\rho(g(a),g(b))\) is well defined
+        because \(g\) preserves time intervals and therefore \(g(a)\) and \(g(b)\)
+        are simultaneous if \(a\) and \(b\) are.
+    </li>
+</ul>
+
+<h4>The basic Galilean transformations on \(\G\)</h4>
 We will use a different notation for the basic Galilean (motion, translation, and rotation)
 transformations than the one used in the book in order to make the parameters more explicit:
 <ul>
 <li>Uniform motion with velocity \(\bfv\in\Rthree\):
     $$U_{\bfv}(t,\bfx) = g_1(t,\bfx) = (t,\bfx+\bfv t)$$
 </li>
-<li>Translation by a vector \((s,\mathbf{s})\in\G\):
-    $$T_{(s,\mathbf{s})}(t,\bfx) = g_2(t,\bfx) = (t+s,\bfx+\mathbf{s})$$
+<li>Translation by a vector \((s,\bfs)\in\G\):
+    $$T_{(s,\bfs)}(t,\bfx) = g_2(t,\bfx) = (t+s,\bfx+\bfs)$$
 </li>
 <li>Rotation by an orthogonal matrix \(G\in\mathbf{O}_3(\R)\):
     $$R_G(t,\bfx) = g_3(t,\bfx) = (t,G\bfx)$$</li>
 </ul>
 
-<h4>Basic Galilean transformations</h4>
 <h5>Uniform motion Galilean transformations</h5>
+First let's verify that a uniform motion transformation \(U_\bfv\) is indeed galilean:
+<ul>
+    <li>\(U_\bfv\) clearly preserves time intervals since it does not alter the time coordinate \(t\).</li>
+    <li>If \((t,\bfx),(t,\bfy)\in\G\) are two simultaneous events then
+        \((\bfx+\bfv t)-(\bfy+\bfv t)=\bfx-\bfy\),
+        so \(U_\bfv\) preserves the distance between simultaneous events.
+    </li>
+</ul>
+Thus \(U_\bfv\) is galilean.
+<p></p>
+Let's look at the parameter \(\bfv\):
 \begin{align}
 U_{\mathbf{v+w}}(t, \bfx) & = (t, \bfx+(\bfv+\mathbf{w})t) \\
 & = (t, \bfx + \bfv t + \mathbf{w}t) \\
@@ -108,12 +139,15 @@ This gives an embedding of \(\Rthree\) in \(\mathbf{GL}_4(\R)\).
 The same extends more generally to an embedding of \(\Rn\) in \(\mathbf{GL}_{n+1}(\R)\).
 
 <h5>Translation Galilean transformations</h5>
-Clearly \(T_{(s+s',\mathbf{s}+\mathbf{s'})} = T_{(s,\mathbf{s})}+T_{(s',\mathbf{s'})}\)
-and \(T_{(s,\mathbf{s})}^{-1}=T_{(-s,\mathbf{-s})}\).
-In particular the map \(T:(s,\mathbf{s})\mapsto T_(s,\mathbf{s})\) is a group homomorphism, in fact a monomorphism,
-embedding \(\G\) as an abelian subgroup of \(Galilean\left(\G\right)\).
+Note that these are nothing more than the affine parallel displacements of \(\Rto{4}\) operating
+on \(\G\).
+<p></p>
+Clearly \(T_{(s+s',\bfs+\mathbf{s'})} = T_{(s,\bfs)}+T_{(s',\mathbf{s'})}\)
+and \(T_{(s,\bfs)}^{-1}=T_{(-s,\mathbf{-s})}\).
+In particular the map \(T:(s,\bfs)\mapsto T_(s,\bfs)\) is a group homomorphism, in fact a monomorphism,
+embedding the group of parallel displacements \(\G\) as an abelian subgroup of \(Galilean\left(\G\right)\).
 Note, however, that with the exception of \(T_{(0,\mathbf{0})}\),
-\(T_(s,\mathbf{s})\) is not a linear transformation as it does not preserve the origin.
+\(T_(s,\bfs)\) is not a linear transformation as it does not preserve the origin.
 
 <h5>Rotation Galilean transformations</h5>
 The map \(G\mapsto R_G\) is an embedding of \(\mathbf{O}_3(\R)\) in \(Galilean\left(\G\right)\).
@@ -127,33 +161,33 @@ $$
 viewed as an element of \(\mathbf{GL}(\G)\).
 
 <h5>Do uniform motion and translation transformations commute?</h5>
-$$ U_{\bfv}\circ T_{(s, \mathbf{s})}(t, \bfx) = U_{\bfv}(t+s, \bfx+\mathbf{s}) = \left(t+s, \bfx+\mathbf{s}+\bfv\cdot(t+s)\right) $$
+$$ U_{\bfv}\circ T_{(s, \bfs)}(t, \bfx) = U_{\bfv}(t+s, \bfx+\bfs) = \left(t+s, \bfx+\bfs+\bfv\cdot(t+s)\right) $$
 whereas
-$$ T_{(s, \mathbf{s})}\circ U_{\bfv}(t, \bfx) = T_{(s, \mathbf{s})}(t,\bfx+\bfv t) = (t+s,\bfx+\mathbf{s}+\bfv t) $$
+$$ T_{(s, \bfs)}\circ U_{\bfv}(t, \bfx) = T_{(s, \bfs)}(t,\bfx+\bfv t) = (t+s,\bfx+\bfs+\bfv t) $$
 so that
-$$ U_{\bfv}\circ T_{(s, \mathbf{s})}=T_{(0, \bfv s)}\circ T_{(s, \mathbf{s})}\circ U_{\bfv}.$$
-Thus \(U_{\bfv}\) and \(T_{(s, \mathbf{s})}\) commute only when \(\bfv s = 0\),
+$$ U_{\bfv}\circ T_{(s, \bfs)}=T_{(0, \bfv s)}\circ T_{(s, \bfs)}\circ U_{\bfv}.$$
+Thus \(U_{\bfv}\) and \(T_{(s, \bfs)}\) commute only when \(\bfv s = 0\),
 that is when either \(s=0\) (no shift in the time dimension) or \(\bfv=\mathbf{0}\) (the trivial case).
 <p></p>
 Using this observation we can construct other identities, e.g.
 $$\displaylines{
-    U_{\bfv}\circ T_{(s, \mathbf{s})}
-    = U_{\bfv}\circ T_{(0, \mathbf{s})}\circ T_{(s, \mathbf{0})}
-    = T_{(0, \mathbf{s})}\circ U_{\bfv}\circ T_{(s, \mathbf{0})}\\
-    T_{(s, \mathbf{s})}\circ U_{\bfv}
-    = T_{(s, \mathbf{0})}\circ T_{(0, \mathbf{s})}\circ U_{\bfv}
-    = T_{(s, \mathbf{0})}\circ U_{\bfv}\circ T_{(0, \mathbf{s})}.
+    U_{\bfv}\circ T_{(s, \bfs)}
+    = U_{\bfv}\circ T_{(0, \bfs)}\circ T_{(s, \mathbf{0})}
+    = T_{(0, \bfs)}\circ U_{\bfv}\circ T_{(s, \mathbf{0})}\\
+    T_{(s, \bfs)}\circ U_{\bfv}
+    = T_{(s, \mathbf{0})}\circ T_{(0, \bfs)}\circ U_{\bfv}
+    = T_{(s, \mathbf{0})}\circ U_{\bfv}\circ T_{(0, \bfs)}.
 }$$
 
 <h5>Do translation and rotation transformations commute?</h5>
 \begin{align}
-R_G\circ T_{(s, \mathbf{s})}(t, \bfx) & = R_G(t+s, \bfx+\mathbf{s}) \\
-& = \left(t+s, G(\bfx+\mathbf{s})\right) \\
-& = T_{(s, \mathbf{0})}\left(t, G(\bfx+\mathbf{s})\right) \\
-& = T_{(s, \mathbf{0})} \circ R_G(t, \bfx+\mathbf{s}) \\
-& = T_{(s, \mathbf{0})} \circ R_G \circ T_{(0, \mathbf{s})}(t, \bfx)
+R_G\circ T_{(s, \bfs)}(t, \bfx) & = R_G(t+s, \bfx+\bfs) \\
+& = \left(t+s, G(\bfx+\bfs)\right) \\
+& = T_{(s, \mathbf{0})}\left(t, G(\bfx+\bfs)\right) \\
+& = T_{(s, \mathbf{0})} \circ R_G(t, \bfx+\bfs) \\
+& = T_{(s, \mathbf{0})} \circ R_G \circ T_{(0, \bfs)}(t, \bfx)
 \end{align}
-Note that time-translation (i.e. when \(\mathbf{s}=\mathbf{0})\) and rotation transformations do commute:
+Note that time-translation (i.e. when \(\bfs=\mathbf{0})\) and rotation transformations do commute:
 $$R_G\circ T_{(s, \mathbf{0})} = T_{(s, \mathbf{0})} \circ R_G$$
 This is expected because time-translations operate on the \(\R\) part of \(\G\)
 whereas rotations operate on the \(\Rthree\) part of \(\G\).
