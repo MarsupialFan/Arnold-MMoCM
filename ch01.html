@@ -75,23 +75,26 @@ Note that the definition of \(g\) above
 can be written as \(g(y-x)=f(y)-f(x)\) for every \(x,y\in\mathbf{A}\).
 
 <h3>B Galilean structure</h3>
-It is important to note that galilean transformations do not necessarily preserve the affine structure.
-That is, a galilean transformation on a galilean space \(\mathbf{A}^4\) might not commute with parallel
-displacements.
-E.g. as we will see below
-in the case of the galilean space \(\G\)  uniform motion and rotation galilean transformations
-do not always commute with the parallel displacements (which are the translations \(T_{(s,\bfs)}\)).
-Thus in order for \(g:\mathbf{A}^4\rightarrow\mathbf{A}^4\) to be a galilean transformation it
-needs to statisfy the following two conditions:
+Recall that a map \(g:\mathbf{A}^4\rightarrow\mathbf{A}^4\) is a <em>galilean transformation</em> if it
+statisfies the following conditions:
 <ul>
-    <li>It must preserve time intervals: \(t(g(a),g(b))=t(a,b)\) for every \(a,b\in\mathbf{A}^4\).</li>
-    <li>It must preserve distances between simultaneous events: \(\rho(g(a),g(b))=\rho(a,b)\)
+    <li>It is an affine transformation (of \(\mathbf{A}^4\)).</li>
+    <li>It preserves time intervals: \(t(g(a),g(b))=t(a,b)\) for every \(a,b\in\mathbf{A}^4\).</li>
+    <li>It preserves distances between simultaneous events: \(\rho(g(a),g(b))=\rho(a,b)\)
         for every two simultaneous events \(a,b\in\mathbf{A}^3\).
         Note that the distance \(\rho(g(a),g(b))\) is well defined
         because \(g\) preserves time intervals and therefore \(g(a)\) and \(g(b)\)
         are simultaneous if \(a\) and \(b\) are.
     </li>
 </ul>
+<!--
+It is important to note that galilean transformations do not necessarily preserve the affine structure.
+That is, a galilean transformation on a galilean space \(\mathbf{A}^4\) might not commute with parallel
+displacements.
+E.g. as we will see below
+in the case of the galilean space \(\G\)  uniform motion and rotation galilean transformations
+do not always commute with the parallel displacements (which are the translations \(T_{(s,\bfs)}\)).
+-->
 
 <h4>The basic Galilean transformations on \(\G\)</h4>
 We will use a different notation for the basic Galilean (motion, translation, and rotation)
