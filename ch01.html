@@ -197,9 +197,9 @@ $$\displaylines{
 \begin{align}
 R_G\circ T_{(s, \bfs)}(t, \bfx) & = R_G(t+s, \bfx+\bfs) \\
 & = \left(t+s, G(\bfx+\bfs)\right) \\
-& = T_{(s, \mathbf{0})}\left(t, G(\bfx+\bfs)\right) \\
-& = T_{(s, \mathbf{0})} \circ R_G(t, \bfx+\bfs) \\
-& = T_{(s, \mathbf{0})} \circ R_G \circ T_{(0, \bfs)}(t, \bfx)
+& = \left(t+s, G(\bfx)+G(\bfs)\right) \\
+& = T_{(s, G(\bfs))}\left(t, G(\bfx)\right) \\
+& = T_{(s, G(\bfs))} \circ R_G(t, \bfx)
 \end{align}
 Note that time-translation (i.e. when \(\bfs=\mathbf{0})\) and rotation transformations do commute:
 $$R_G\circ T_{(s, \mathbf{0})} = T_{(s, \mathbf{0})} \circ R_G$$
@@ -208,7 +208,7 @@ whereas rotations act on the \(\Rthree\) part of \(\G\).
 
 <h5>Do uniform motion and rotation transformations commute?</h5>
 \begin{align}
-R_G\circ U_{\bfv}(t, \bfx)  & = R_G(t, \bfx+\bfv t) \\
+R_G\circ U_{\bfv}(t, \bfx) & = R_G(t, \bfx+\bfv t) \\
 & = \left(t, G(\bfx+\bfv t)\right) \\
 & = \left(t, G(\bfx)+G(\bfv t)\right) \\
 & = U_{G(\bfv)}\left(t,G(\bfx)\right) \\
@@ -220,6 +220,57 @@ This can happen non-trivially when \(G\) is a reflection along the line passing 
 PROBLEM. Every galilean transformation of \(\G\) can be written uniquely way as the composition of a rotation, a translation,
 and a uniform motion
 </h4>
+Let \(F\) be a galilean transformation of \(\G\),
+let \((s,\bfs)\in\G\) be defined by \(F(0,\mathbf{0})=(s,\bfs)\),
+and consider \(F_1=T_{(-s,-\bfs)}\circ F\):
+it is a galilean transformation
+(by virtue of being a composition of two galilean transformations)
+which preserves the origin \((0,\mathbf{0})\),
+hence it is a linear transformation of \(\G\).
+Since \(F_1\), being galilean, preserves distances in \(\{0\}\times\Rthree\),
+it must act on \(\{0\}\times\Rthree\) as some orthogonal transformation \(G\in\mathbf{O}(\Rthree)\).
+Let \(F_2=R_{G^{-1}}\circ F_1\);
+it too is a galilean transformation which preserve the origin and is a linear transformation of \(\G\).
+It follows that \(F_2\) preserves the time dimension: indeed, for every \((x,\bfx)\in\G\)
+$$t\left(F_2(x,\bfx)-F_2(0,\mathbf{0})\right)=t\left(F_2(x,\bfx)-(0,\mathbf{0})\right)=x.$$
+(here \(t\) denotes the time interval function on the galilean space,
+and we used the time-interval preservation property of galilean transformations).
+There is some vector \(\bfv\in\Rthree\), then, such that \(F_2(1,\mathbf{0})=(1,\bfv)\),
+and we define \(F_3 = U_{-\bfv}\circ F_2\).
+The map \(F_3\) too is galilean and linear.
+Both \(F_2\) and \(U_{\bfv}\) act as the indentity on \(\{0\}\times\Rthree\),
+and therefore so does \(F_3\).
+Finally,
+$$F_3(1,\mathbf{0})=U_{-\bfv}\circ F_2(1,\mathbf{0})=U_{-\bfv}(1,\bfv)=(1,\mathbf{0}).$$
+Thus \(F_3\) fixes a basis of \(\G\) and is therefore the identity transformation.
+It follows that
+$$F=T_{(s,\bfs)}\circ R_{G}\circ U_{\bfv}=R_{G}\circ T_{(s,G^{-1}(\bfs))}\circ U_{\bfv}$$
+which proves the existence of the desired decomposition.
+<p></p>
+To prove uniqueness we look at this decomposition.
+Note that \(s\) is the time coordinate of \(F(0,\mathbf{0})\),
+and is therefore determined uniquely by \(F\).
+Let \(F'\) denote the projection of \(F\) on the \(\Rthree\) component
+and  \(e_1,e_2,e_3\) be the standard basis of \(\Rthree\).
+Then
+\begin{align}
+F(0,e_i) & = R_{G}\circ T_{(s,G^{-1}(\bfs))}(0,e_i) \\
+& = R_{G}\left(s,e_i+G^{-1}(\bfs)\right) \\
+& = \left(s,G(e_i)+\bfs\right).
+\end{align}
+Thus for \(i\ne j\) this yields
+$$G(e_i-e_j)=G(e_i)-G(e_j)=F'(0,e_i)-F'(0,e_j).$$
+Any two of of the \(e_i-e_j\)'s are linearly independent so these equations determine \(G\)
+(rotation and reflection).
+Then any one of the equations for the \(F(0,e_i)\)'s determines the value of \(\bfs\).
+Finally,
+\begin{align}
+F(1,\mathbf{0}) & = R_{G}\circ T_{(s,G^{-1}(\bfs))}(1,\bfv) \\
+& = R_{G}\left(1+s,\bfv+G^{-1}(\bfs)\right) \\
+& = \left(1+s,G(\bfv)+\bfs\right),
+\end{align}
+so \(\bfv=G^{-1}\left(F'(1,\mathbf{0})-\bfs\right)\).
+This completes the proof.
 
 <h4>PROBLEM. All Galilean structures are isomorphic</h4>
 Let \(X\) and \(Y\) be two Galilean structures.
