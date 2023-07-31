@@ -62,9 +62,20 @@ a_0+\left((a_2-a_1)+(a_1-a_0)\right) & = a_0+\left((a_1-a_0)+(a_2-a_1)\right) \\
 \end{align}
 so by uniqueness we get
 \(a_2-a_0=(a_2-a_1)+(a_1-a_0)\). This gives the desired result.
+<h3>Affine transformations</h3>
+It is worthwhile recalling the definition of affine transformations.
+A bijection \(f:\mathbf{A}\rightarrow\mathbf{A}\) (here \(\mathbf{A}\) is an affine \(n\)-space)
+is an affine transformation if the map \(g:\Rn\rightarrow\Rn\) defined by \(g(v)=f(x+v)-f(x)\)
+for every \(x\in\mathbf{A}\) is:
+<ul>
+    <li>Well defined, i.e. does not depend on the choice of \(x\)</li>
+    <li>A linear transformation of \(\Rn\).</li>
+</ul>
+Note that the definition of \(g\) above
+can be written as \(g(y-x)=f(y)-f(x)\) for every \(x,y\in\mathbf{A}\).
 
 <h3>B Galilean structure</h3>
-It is important to note that a galilean transformation does not necessarily preserve the affine structure.
+It is important to note that galilean transformations do not necessarily preserve the affine structure.
 That is, a galilean transformation on a galilean space \(\mathbf{A}^4\) might not commute with parallel
 displacements.
 E.g. as we will see below
