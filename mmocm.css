@@ -3,3 +3,39 @@ div.content {
     margin: 0 auto;
     font-size: larger;
 }
+
+body {
+    counter-reset: h1counter;
+}
+
+h1 {
+    counter-reset: h2counter;
+}
+h1::before {
+    counter-increment: h1counter;
+    content: counter(h1counter) ". ";
+}
+
+h2 {
+    counter-reset: h3counter;
+}
+h2::before {
+    counter-increment: h2counter;
+    content: counter(h2counter, upper-alpha) ". ";
+}
+
+h3 {
+    counter-reset: h4counter;
+}
+h3::before {
+    counter-increment: h3counter;
+    content: counter(h2counter, upper-alpha) "." counter(h3counter) ". ";
+}
+
+h4 {
+    counter-reset: h5counter;
+}
+h4::before {
+    counter-increment: h4counter;
+    content: counter(h2counter, upper-alpha) "." counter(h3counter) "." counter(h4counter, lower-roman) ". ";
+}

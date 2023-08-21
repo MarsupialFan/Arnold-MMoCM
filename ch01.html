@@ -38,13 +38,11 @@
     \def\Gn{{\GalileanSpace{n}}}
 \)
 
-<h1>1 The principles of relativity and determinacy</h1>
+<h1>The principles of relativity and determinacy</h1>
 
-<h1>2 The Galilean group and Newton's equations</h1>
+<h1>The galilean group and Newton's equations</h1>
 
-<h2>Affine spaces</h2>
-
-<h3>A Notation</h3>
+<h2>Notation</h2>
 We will denote an element of \(\Gn\) as \((x,\bfx)\) where \(x\in\R\) and \(\bfx\in\Rn\).
 <p></p>
 <b>Claim</b> Let \(\mathbf{A}\) be an affine \(n\)-space and \(a_0,a_1,a_2\in\mathbf{A}\). Then
@@ -76,7 +74,7 @@ for every \(x\in\mathbf{A}\) is:
 Note that the definition of \(g\) above
 can be written as \(g(y-x)=f(y)-f(x)\) for every \(x,y\in\mathbf{A}\).
 
-<h3>B Galilean structure</h3>
+<h2>Galilean structure</h2>
 Recall that a map \(g:\mathbf{A}^4\rightarrow\mathbf{A}^4\) is a <em>galilean transformation</em> if it
 statisfies the following conditions:
 <ul>
@@ -98,8 +96,8 @@ in the case of the galilean space \(\G\)  uniform motion and rotation galilean t
 do not always commute with the parallel displacements (which are the translations \(T_{(s,\bfs)}\)).
 -->
 
-<h4>The basic Galilean transformations on \(\G\)</h4>
-We will use a different notation for the basic Galilean (motion, translation, and rotation)
+<h3>Example: the three basic galilean transformations on \(\G\)</h3>
+We will use a different notation for the basic galilean (motion, translation, and rotation)
 transformations than the one used in the book in order to make the parameters more explicit:
 <ul>
 <li>Uniform motion with velocity \(\bfv\in\Rthree\):
@@ -112,7 +110,7 @@ transformations than the one used in the book in order to make the parameters mo
     $$R_G(t,\bfx) = g_3(t,\bfx) = (t,G\bfx)$$</li>
 </ul>
 
-<h5>Uniform motion Galilean transformations</h5>
+<h4>Uniform motion galilean transformations</h4>
 First let's verify that a uniform motion transformation \(U_\bfv\) is indeed galilean:
 <ul>
     <li>\(U_\bfv\) clearly preserves time intervals since it does not alter the time coordinate \(t\).</li>
@@ -140,7 +138,7 @@ Note that \(\Rthree\) is abelian, and therefore so is the image of \(U\);
 this is also clear from the calculation above.
 From this we also get \(U_\bfv^{-1}=U_\mathbf{-v}\).
 <p></p>
-When looking at our Galilean space \(\G\) as \(\Rto{4}\),
+When looking at our galilean space \(\G\) as \(\Rto{4}\),
 if \(\bfv\in\Rthree\) is the (column) vector \((v_1,v_2,v_3)\)
 then \(U_\bfv\) is represented by the matrix
 $$
@@ -154,7 +152,7 @@ $$
 This gives an embedding of \(\Rthree\) in \(\mathbf{GL}_4(\R)\).
 The same extends more generally to an embedding of \(\Rn\) in \(\mathbf{GL}_{n+1}(\R)\).
 
-<h5>Translation Galilean transformations</h5>
+<h4>Translation galilean transformations</h4>
 Note that these are nothing more than the affine parallel displacements of \(\Rto{4}\) operating
 on \(\G\).
 <p></p>
@@ -165,7 +163,7 @@ embedding the group of parallel displacements \(\G\) as an abelian subgroup of \
 Note, however, that with the exception of \(T_{(0,\mathbf{0})}\),
 \(T_(s,\bfs)\) is not a linear transformation as it does not preserve the origin.
 
-<h5>Rotation Galilean transformations</h5>
+<h4>Rotation galilean transformations</h4>
 The map \(G\mapsto R_G\) is an embedding of \(\mathbf{O}_3(\R)\) in \(Galilean\left(\G\right)\).
 The image of this map does consist of linear transformations with \(G\) mapped to the matrix
 $$
@@ -176,7 +174,7 @@ $$
 $$
 viewed as an element of \(\mathbf{GL}(\G)\).
 
-<h5>Do uniform motion and translation transformations commute?</h5>
+<h4>Do uniform motion and translation transformations commute?</h4>
 $$ U_{\bfv}\circ T_{(s, \bfs)}(t, \bfx) = U_{\bfv}(t+s, \bfx+\bfs) = \left(t+s, \bfx+\bfs+\bfv\cdot(t+s)\right) $$
 whereas
 $$ T_{(s, \bfs)}\circ U_{\bfv}(t, \bfx) = T_{(s, \bfs)}(t,\bfx+\bfv t) = (t+s,\bfx+\bfs+\bfv t) $$
@@ -195,7 +193,7 @@ $$\displaylines{
     = T_{(s, \mathbf{0})}\circ U_{\bfv}\circ T_{(0, \bfs)}.
 }$$
 
-<h5>Do translation and rotation transformations commute?</h5>
+<h4>Do translation and rotation transformations commute?</h4>
 \begin{align}
 R_G\circ T_{(s, \bfs)}(t, \bfx) & = R_G(t+s, \bfx+\bfs) \\
 & = \left(t+s, G(\bfx+\bfs)\right) \\
@@ -208,7 +206,7 @@ $$R_G\circ T_{(s, \mathbf{0})} = T_{(s, \mathbf{0})} \circ R_G$$
 This is expected because time-translations act on the \(\R\) part of \(\G\)
 whereas rotations act on the \(\Rthree\) part of \(\G\).
 
-<h5>Do uniform motion and rotation transformations commute?</h5>
+<h4>Do uniform motion and rotation transformations commute?</h4>
 \begin{align}
 R_G\circ U_{\bfv}(t, \bfx) & = R_G(t, \bfx+\bfv t) \\
 & = \left(t, G(\bfx+\bfv t)\right) \\
@@ -218,10 +216,10 @@ R_G\circ U_{\bfv}(t, \bfx) & = R_G(t, \bfx+\bfv t) \\
 \end{align}
 Note that \(R_G\) and \(U_{\bfv}\) do commute when \(\bfv\) is a fixed-point of \(G\).
 This can happen non-trivially when \(G\) is a reflection along the line passing through \(\bfv\).
-<h4>
-Problem. Every galilean transformation of \(\G\) can be written uniquely way as the composition of a rotation, a translation,
+<h3>
+Problem: every galilean transformation of \(\G\) can be written uniquely way as the composition of a rotation, a translation,
 and a uniform motion
-</h4>
+</h3>
 Let \(F\) be a galilean transformation of \(\G\),
 let \((s,\bfs)\in\G\) be defined by \(F(0,\mathbf{0})=(s,\bfs)\),
 and consider \(F_1=T_{(-s,-\bfs)}\circ F\):
@@ -275,8 +273,8 @@ so \(\bfv=G^{-1}\left(F'(1,\mathbf{0})-\bfs\right)\).
 This completes the proof.
 $$\tag*{$\blacksquare$}$$
 
-<h4>Problem. All Galilean structures are isomorphic</h4>
-Let \(X\) and \(Y\) be two Galilean structures.
+<h3>Problem: all galilean structures are isomorphic</h3>
+Let \(X\) and \(Y\) be two galilean structures.
 Pick any two point \(x_0\in X\) and \(y_0\in Y\).
 We define a map \(\chi:X\rightarrow Y\) as follows:
 <ul>
@@ -288,15 +286,15 @@ We define a map \(\chi:X\rightarrow Y\) as follows:
         that is \(v=0\) and therefore \(\chi(x_0) = y_0\).
     </li>
 </ul>
-The map \(\chi\) is an isomorphism of Galilean structures.
+The map \(\chi\) is an isomorphism of galilean structures.
 Indeed, by definition of affine spaces \(\chi\) is one-to-one and by construction satisfies
 \(\chi(x)-\chi(x_0)=x-x_0\).
 It follows then that \(\chi(x')-\chi(x)=x'-x\) for every \(x,x'\in\mathbf{A}\), 
-so \(\chi\) preserves the Galilean structure.
+so \(\chi\) preserves the galilean structure.
 $$\tag*{$\blacksquare$}$$
 
-<h3>C Motion, velocity, acceleration</h3>
-If \(\phi\) is a Galilean transformation on \(\G\) then \(\phi\) extends naturally to
+<h2>Motion, velocity, acceleration</h2>
+If \(\phi\) is a galilean transformation on \(\G\) then \(\phi\) extends naturally to
 a transformation on \(\GN\), which we also denote by \(\phi\). Indeed, consider the following
 diagram:
 \begin{CD}
@@ -308,10 +306,10 @@ where the vertical arrows send \((t,\mathbf{x_1}, \dots, \mathbf{x_n})\) to
 \(\left((t,\mathbf{x_1}), \dots, (t,\mathbf{x_n})\right)\).
 <p></p>
 
-<h3>D Newton's equations</h3>
+<h2>Newton's equations</h2>
 
-<h3>E Constraints imposed by the principle of relativity</h3>
-<h4>Example 1</h4>
+<h2>Constraints imposed by the principle of relativity</h2>
+<h3>Example 1: constraints imposed by time translations</h3>
 Assume that \(\bfx=\varphi(t)\) is a solution of equation (1)
 and denote by \(\varphi_s\) the function mapping \(t\mapsto \varphi(t+s)\).
 Then, as discussed in the book, \(\bfx=\varphi_s(t)\) is a solution of equation (1) as well, that is
@@ -344,7 +342,7 @@ for every value of \(t\).
 That is, \(F\) does not depend on \(T\).
 $$\tag*{$\blacksquare$}$$
 
-<h4>Example 2</h4>
+<h3>Example 2: constraints imposed by three-dimensional space translations</h3>
 We start by looking at translations in 3d space.
 For simplicity we will denote an \(N\)-vector \((\bfx_1,\dots,\bfx_n)\in\RN\) by \(\angular{\bfx_i}\).
 Recall that each \(\bfx_i\) is a 3-vector, that is \(\bfx_i\in\Rthree\) and \(N=3n\).
@@ -470,10 +468,10 @@ and therefore \(\mathbf{F}\) depends only on the "relative coordinates"
 This concludes the proof of example 2.
 $$\tag*{$\blacksquare$}$$
 
-<h4>Example 3</h4>
+<h3>Example 3: constraints imposed by three-dimensional space rotations</h3>
 Nothing much to add here...
 
-<h4>Problem. mechanical system with a single point</h4>
+<h3>Problem: mechanical system with a single point</h3>
 The hint pretty much gives it all:
 Because \(n=1\) in this case it follows from examples 1 and 2 that \(F\)
 does not depend on \(\bfx,\dot{\bfx}\), or on \(t\),
