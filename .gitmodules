@@ -1,0 +1,3 @@
+[submodule "toc"]
+	path = toc
+	url = https://github.com/MarsupialFan/toc.git

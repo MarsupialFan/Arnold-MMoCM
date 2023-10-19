@@ -6,6 +6,7 @@
     <meta name="keywords" content="Mathematics,Physics">
     <meta name="author" content="Adi Ofer">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="toc/toc.css">
     <link rel="stylesheet" href="mmocm.css">
     <title>Chapter 1: Experimental facts</title>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
@@ -18,6 +19,8 @@
     -->
 </head>
 <body>
+<nav id="toc"></nav>
+<main>
 <div class="content">
 \(
     \def\angular#1{{\left<{#1}\right>}}
@@ -481,5 +484,10 @@ hence \(C\) must be the zero vector in \(\Rthree\).
 $$\tag*{$\blacksquare$}$$
 
 </div>
+</main>
+<script type="module">
+    import add_toc from "./toc/toc.js";
+    add_toc("main", "toc");
+</script>
 </body>
 </html>
