@@ -30,6 +30,7 @@
     \def\bfx{{\mathbf{x}}}
     \def\bfv{{\mathbf{v}}}
     \def\bfy{{\mathbf{y}}}
+    \def\bfzero{{\mathbf{0}}}
     \def\R{{\mathbf{R}}}
     \def\Rto#1{{\R^{#1}}}
     \def\Rthree{{\Rto{3}}}
@@ -481,6 +482,34 @@ does not depend on \(\bfx,\dot{\bfx}\), or on \(t\),
 so it must be a constant function, \(F=C\) where \(C\in\Rthree\).
 Now example 3 shows that \(G(C)=C\) for every orthogonal transformation \(G\),
 hence \(C\) must be the zero vector in \(\Rthree\).
+$$\tag*{$\blacksquare$}$$
+
+<h3>Problem: mechanical system with two points with initial zero velocities</h3>
+Let \(\varphi\) and \(\psi\) be the two points and let \(x,y,z\) be the coordinates of \(\Rthree\).
+Since (time- as well as 3d-) translations and rotations carry inertial coordinate systems to inertial coordinate systems
+and zero velocities to zero velocities we can assume without loss of generality that:
+<ul>
+    <li>The initial moment is \(t_0=0\)</li>
+    <li>\(\varphi(0)=\bfzero\)</li>
+    <li>\(\psi(0)\) is on the \(x\)-axis, that is \(\psi_y(0)=\psi_z(0)=0\).</li>
+</ul>
+Note that we assume that \(\varphi(0)\neq\psi(0)\)
+(that is, \(\psi_x(0)\neq 0\))
+so that the line connecting the two points at the initial moment is well defined.
+<p></p>
+Let \(G\) be any rotation of \(\Rthree\) around the \(x\)-axis.
+By Example 3 the pair \((G\varphi, G\psi)\) also solves equation (1).
+Since \(G\) fixes the \(x\)-axis and does not alter the initial zero velocities
+it follows that \((G\varphi, G\psi)\) is a solution that satisfies the same initial conditions,
+that is
+$$
+\left(G\varphi,G\psi,\dot{(G\varphi)},\dot{(G\psi)}\right)(0)=
+\left(\varphi,\psi,\dot\varphi,\dot\psi\right)(0).
+$$
+Thus uniqueness of the solution to equation (1)&mdash;assuming that our points are smooth enough&mdash;implies
+that \(G\varphi=\varphi\) and \(G\psi=\psi\).
+It follows that the \(y\) and \(z\) coordinates of \(\varphi(t)\) and of \(\psi(t)\) are \(0\) for all values of \(t\),
+which finishes the proof.
 $$\tag*{$\blacksquare$}$$
 
 </div>
