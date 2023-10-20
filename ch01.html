@@ -513,6 +513,41 @@ It follows that the \(y\) and \(z\) coordinates of \(\vphi(t)\) and of \(\psi(t)
 which finishes the proof.
 $$\tag*{$\blacksquare$}$$
 
+<h4>Generalization</h4>
+The same proof works in a more general case,
+namely that of \(n\ge 2\) points \(\vphi_1,\dots,\vphi_n\) satisfying,
+in some inertial coordinate system,
+the following conditions:
+<ul>
+    <li>All the points are on one line \(L\) at the initial moment.</li>
+    <li>The velocities of all the points at the initial moment are on that same line \(L\).</li>
+</ul>
+Indeed, in such a case
+we can assume without loss of generality as above that \(L\) is the \(x_1\)-axis,
+and let \(G\) be a rotation around \(L\).
+Then \(G\vphi_i(t_0)=\vphi_i(t_0)\) and
+$$
+\dot{\left(G\vphi_i\right)}(t_0)
+=
+\left.dG\right|_{\vphi_i(t_0)}\cdot\dot{\vphi_i}(t_0)
+=
+\begin{pmatrix}
+1 & 0 & 0 \\
+0 & * & * \\
+0 & * & *
+\end{pmatrix}
+\cdot
+\begin{pmatrix}
+{d\vphi_{i,1}}/{dt}(t_0) \\
+0 \\
+0
+\end{pmatrix}
+=
+\dot{\vphi_i}(t_0).
+$$
+Thus \(G\vphi_i=\vphi_i\) for \(i=1,\dots,n\) from the uniqueness of the solution of (1),
+and it follows that the points will remain on the line \(L\).
+
 </div>
 </main>
 <script type="module">
