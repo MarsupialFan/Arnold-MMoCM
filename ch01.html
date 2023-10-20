@@ -12,9 +12,9 @@
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
-    <!-- Turn \phi into \varphi; for now this appears not to work...
+    <!-- Turn \phi into \vphi; for now this appears not to work...
     <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({TeX: {Macros: {phi:"\\varphi"}}});
+        MathJax.Hub.Config({TeX: {Macros: {phi:"\\vphi"}}});
     </script>
     -->
 </head>
@@ -40,6 +40,7 @@
     \def\G{{\GalileanSpace{3}}}
     \def\GN{{\GalileanSpace{N}}}
     \def\Gn{{\GalileanSpace{n}}}
+    \def\vphi{{\varphi}}
 \)
 
 <h1>The principles of relativity and determinacy</h1>
@@ -314,32 +315,32 @@ where the vertical arrows send \((t,\mathbf{x_1}, \dots, \mathbf{x_n})\) to
 
 <h2>Constraints imposed by the principle of relativity</h2>
 <h3>Example 1: constraints imposed by time translations</h3>
-Assume that \(\bfx=\varphi(t)\) is a solution of equation (1)
-and denote by \(\varphi_s\) the function mapping \(t\mapsto \varphi(t+s)\).
-Then, as discussed in the book, \(\bfx=\varphi_s(t)\) is a solution of equation (1) as well, that is
-$$\ddot{\varphi}_s(t)=\mathbf{F}\left(\varphi_s(t), \dot{\varphi}_s(t), t\right).$$
+Assume that \(\bfx=\vphi(t)\) is a solution of equation (1)
+and denote by \(\vphi_s\) the function mapping \(t\mapsto \vphi(t+s)\).
+Then, as discussed in the book, \(\bfx=\vphi_s(t)\) is a solution of equation (1) as well, that is
+$$\ddot{\vphi}_s(t)=\mathbf{F}\left(\vphi_s(t), \dot{\vphi}_s(t), t\right).$$
 From the chain rule we get
-\(\dot{\varphi}_s(t)=\dot{\varphi}(t+s)\)
+\(\dot{\vphi}_s(t)=\dot{\vphi}(t+s)\)
 and
-\(\ddot{\varphi}_s(t)=\ddot{\varphi}(t+s)\).
-Plugging these identities into the differential equation satisfied by \(\varphi_s\) above we get:
-$$\ddot{\varphi}(t+s)=\mathbf{F}\left(\varphi(t+s), \dot{\varphi}(t+s), t\right).$$
+\(\ddot{\vphi}_s(t)=\ddot{\vphi}(t+s)\).
+Plugging these identities into the differential equation satisfied by \(\vphi_s\) above we get:
+$$\ddot{\vphi}(t+s)=\mathbf{F}\left(\vphi(t+s), \dot{\vphi}(t+s), t\right).$$
 Changing variable \(T=t+s\) and using the chain rule this transforms into
-$$\ddot{\varphi}(T)=\mathbf{F}\left(\varphi(T), \dot{\varphi}(T), T-s\right).$$
-But \(\varphi(T)\) is also a solution of the differential equation, that is,
-$$\ddot{\varphi}(T)=\mathbf{F}\left(\varphi(T), \dot{\varphi}(T), T\right),$$
+$$\ddot{\vphi}(T)=\mathbf{F}\left(\vphi(T), \dot{\vphi}(T), T-s\right).$$
+But \(\vphi(T)\) is also a solution of the differential equation, that is,
+$$\ddot{\vphi}(T)=\mathbf{F}\left(\vphi(T), \dot{\vphi}(T), T\right),$$
 and combining these two equations we see that
-$$\mathbf{F}\left(\varphi(T), \dot{\varphi}(T), T\right)=\mathbf{F}\left(\varphi(T), \dot{\varphi}(T), T-s\right).$$
+$$\mathbf{F}\left(\vphi(T), \dot{\vphi}(T), T\right)=\mathbf{F}\left(\vphi(T), \dot{\vphi}(T), T-s\right).$$
 Now let \(\bfx_0,\dot{\bfx}_0\in\RN\) be two points of the form
-\(\bfx_0=\varphi(t_0),\dot{\bfx}_0=\dot{\varphi}(t_0)\)
-where \(\varphi\) is a solution of equation (1).
+\(\bfx_0=\vphi(t_0),\dot{\bfx}_0=\dot{\vphi}(t_0)\)
+where \(\vphi\) is a solution of equation (1).
 Then for any number \(s\in\R\) we get:
 $$\mathbf{F}\left(\bfx_0, \dot{\bfx}_0, t_0\right)=\mathbf{F}\left(\bfx_0, \dot{\bfx}_0, t_0-s\right),$$
 which, from the definition of the derivative, implies that
 $$\left.\frac{d\mathbf{F}\left(\bfx_0, \dot{\bfx}_0, T\right)}{dT}\right|_{T=t_0}=0.$$
 Finally, from the theory of differential equations we know that for any triplet
-\((\bfx_0, \dot{\bfx}_0, t_0)\in\RN\times\RN\times\R\) there is a solution \(\varphi\)
-of equation (1) which satisfies \(\bfx_0=\varphi(t_0),\dot{\bfx}_0=\dot{\varphi}(t_0)\),
+\((\bfx_0, \dot{\bfx}_0, t_0)\in\RN\times\RN\times\R\) there is a solution \(\vphi\)
+of equation (1) which satisfies \(\bfx_0=\vphi(t_0),\dot{\bfx}_0=\dot{\vphi}(t_0)\),
 and it follows that
 $$\left.\frac{d\mathbf{F}\left(\bfx, \dot{\bfx}, T\right)}{dT}\right|_{T=t}=0$$
 for every value of \(t\).
@@ -351,27 +352,27 @@ We start by looking at translations in 3d space.
 For simplicity we will denote an \(N\)-vector \((\bfx_1,\dots,\bfx_n)\in\RN\) by \(\angular{\bfx_i}\).
 Recall that each \(\bfx_i\) is a 3-vector, that is \(\bfx_i\in\Rthree\) and \(N=3n\).
 <p></p>
-Let \(\bfx_i=\varphi_i(t)\) (\(i=1, 2, \dots, n)\) be a solution for equation (1).
-Let \(\bfr\in\Rthree\) be any translation vector and define \(\psi_i(t)=\varphi_i(t)+\bfr\).
-Then, as discussed in the text, \(\varphi_i(t)+\bfr\) (\(i=1, 2, \dots, n)\) is also
+Let \(\bfx_i=\vphi_i(t)\) (\(i=1, 2, \dots, n)\) be a solution for equation (1).
+Let \(\bfr\in\Rthree\) be any translation vector and define \(\psi_i(t)=\vphi_i(t)+\bfr\).
+Then, as discussed in the text, \(\vphi_i(t)+\bfr\) (\(i=1, 2, \dots, n)\) is also
 a solution for (1).
 That is,
 $$
-\angular{\ddot{\varphi_i}(t)}=\mathbf{F}\left(\angular{\varphi_i(t)}, \angular{\dot{\varphi_i}(t)}, t\right)
+\angular{\ddot{\vphi_i}(t)}=\mathbf{F}\left(\angular{\vphi_i(t)}, \angular{\dot{\vphi_i}(t)}, t\right)
 $$
 and
 $$
 \angular{\ddot{\psi_i}(t)}=\mathbf{F}\left(\angular{\psi_i(t)}, \angular{\dot{\psi_i}(t)}, t\right).
 $$
-But \(\dot{\psi_i}=\dot{\varphi_i}\) and \(\ddot{\psi_i}=\ddot{\varphi_i}\),
+But \(\dot{\psi_i}=\dot{\vphi_i}\) and \(\ddot{\psi_i}=\ddot{\vphi_i}\),
 so we get
 $$
-\mathbf{F}\left(\angular{\angular{\varphi_i(t)+\bfr}, \dot{\varphi_i}(t)}, t\right)=
-\mathbf{F}\left(\angular{\varphi_i(t)}, \angular{\dot{\varphi_i}(t)}, t\right).
+\mathbf{F}\left(\angular{\angular{\vphi_i(t)+\bfr}, \dot{\vphi_i}(t)}, t\right)=
+\mathbf{F}\left(\angular{\vphi_i(t)}, \angular{\dot{\vphi_i}(t)}, t\right).
 $$
 Now for every points \(\angular{\bfx_i}, \angular{\dot{\bfx}_i}\in\RN\) and \(t_0\in\R\)
-there's a solution \(\angular{\varphi_i}\) of equation (1) such that
-\(\varphi_i(t_0)=\bfx_i\) and \(\dot{\varphi_i}(t_0)=\dot{\bfx}_i\)
+there's a solution \(\angular{\vphi_i}\) of equation (1) such that
+\(\vphi_i(t_0)=\bfx_i\) and \(\dot{\vphi_i}(t_0)=\dot{\bfx}_i\)
 for every \(i\).
 Combining these two results we get
 $$
@@ -419,22 +420,22 @@ This proves the first part of the example.
 <p></p>
 We turn now to the second part of the example,
 namely to the case of a uniform motion with velocity \(\bfv\in\Rthree\).
-Let \(\bfx_i=\varphi_i(t)\) (\(i=1, 2, \dots, n)\) be a solution for equation (1):
+Let \(\bfx_i=\vphi_i(t)\) (\(i=1, 2, \dots, n)\) be a solution for equation (1):
 $$
-\angular{\ddot{\varphi_i}(t)}=\mathbf{F}\left(\{\varphi_i(t)-\varphi_j(t)\}, \angular{\dot{\varphi_i}(t)}\right).
+\angular{\ddot{\vphi_i}(t)}=\mathbf{F}\left(\{\vphi_i(t)-\vphi_j(t)\}, \angular{\dot{\vphi_i}(t)}\right).
 $$
 Here we used the previous results.
-Let \(\bfv\in\Rthree\) be any uniform motion vector and define \(\psi_i(t)=\varphi_i(t)+\bfv t\)
+Let \(\bfv\in\Rthree\) be any uniform motion vector and define \(\psi_i(t)=\vphi_i(t)+\bfv t\)
 for \(i=1, 2, \dots, n\).
 Then \(\{\psi_i(t)\}\) is also a solution for (1):
 $$
 \angular{\ddot{\psi_i}(t)}=\mathbf{F}\left(\{\psi_i(t)-\psi_j(t)\}, \angular{\dot{\psi_i}(t)}\right).
 $$
-Since \(\psi_i(t)-\psi_j(t)=\varphi_i(t)-\varphi_j(t)\),
-\(\dot{\psi_i}=\dot{\varphi_i}+\bfv\), and \(\ddot{\psi_i}=\ddot{\varphi_i}\) we get
+Since \(\psi_i(t)-\psi_j(t)=\vphi_i(t)-\vphi_j(t)\),
+\(\dot{\psi_i}=\dot{\vphi_i}+\bfv\), and \(\ddot{\psi_i}=\ddot{\vphi_i}\) we get
 $$
-\mathbf{F}\left(\{\varphi_i(t)-\varphi_j(t)\}, \angular{\dot{\varphi_i}(t)+\bfv}\right)=
-\mathbf{F}\left(\{\varphi_i(t)-\varphi_j(t)\}, \angular{\dot{\varphi_i}(t)}\right),
+\mathbf{F}\left(\{\vphi_i(t)-\vphi_j(t)\}, \angular{\dot{\vphi_i}(t)+\bfv}\right)=
+\mathbf{F}\left(\{\vphi_i(t)-\vphi_j(t)\}, \angular{\dot{\vphi_i}(t)}\right),
 $$
 and as before the theory of ordinary differential equations shows that
 $$
@@ -485,30 +486,30 @@ hence \(C\) must be the zero vector in \(\Rthree\).
 $$\tag*{$\blacksquare$}$$
 
 <h3>Problem: mechanical system with two points with initial zero velocities</h3>
-Let \(\varphi\) and \(\psi\) be the two points and let \(x,y,z\) be the coordinates of \(\Rthree\).
+Let \(\vphi\) and \(\psi\) be the two points and let \(x,y,z\) be the coordinates of \(\Rthree\).
 Since (time- as well as 3d-) translations and rotations carry inertial coordinate systems to inertial coordinate systems
 and zero velocities to zero velocities we can assume without loss of generality that:
 <ul>
     <li>The initial moment is \(t_0=0\)</li>
-    <li>\(\varphi(0)=\bfzero\)</li>
+    <li>\(\vphi(0)=\bfzero\)</li>
     <li>\(\psi(0)\) is on the \(x\)-axis, that is \(\psi_y(0)=\psi_z(0)=0\).</li>
 </ul>
-Note that we assume that \(\varphi(0)\neq\psi(0)\)
+Note that we assume that \(\vphi(0)\neq\psi(0)\)
 (that is, \(\psi_x(0)\neq 0\))
 so that the line connecting the two points at the initial moment is well defined.
 <p></p>
 Let \(G\) be any rotation of \(\Rthree\) around the \(x\)-axis.
-By Example 3 the pair \((G\varphi, G\psi)\) also solves equation (1).
+By Example 3 the pair \((G\vphi, G\psi)\) also solves equation (1).
 Since \(G\) fixes the \(x\)-axis and does not alter the initial zero velocities
-it follows that \((G\varphi, G\psi)\) is a solution that satisfies the same initial conditions,
+it follows that \((G\vphi, G\psi)\) is a solution that satisfies the same initial conditions,
 that is
 $$
-\left(G\varphi,G\psi,\dot{(G\varphi)},\dot{(G\psi)}\right)(0)=
-\left(\varphi,\psi,\dot\varphi,\dot\psi\right)(0).
+\left(G\vphi,G\psi,\dot{(G\vphi)},\dot{(G\psi)}\right)(0)=
+\left(\vphi,\psi,\dot\vphi,\dot\psi\right)(0).
 $$
 Thus uniqueness of the solution to equation (1)&mdash;assuming that our points are smooth enough&mdash;implies
-that \(G\varphi=\varphi\) and \(G\psi=\psi\).
-It follows that the \(y\) and \(z\) coordinates of \(\varphi(t)\) and of \(\psi(t)\) are \(0\) for all values of \(t\),
+that \(G\vphi=\vphi\) and \(G\psi=\psi\).
+It follows that the \(y\) and \(z\) coordinates of \(\vphi(t)\) and of \(\psi(t)\) are \(0\) for all values of \(t\),
 which finishes the proof.
 $$\tag*{$\blacksquare$}$$
 
