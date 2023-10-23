@@ -29,6 +29,7 @@
     \def\bfs{{\mathbf{s}}}
     \def\bfx{{\mathbf{x}}}
     \def\bfv{{\mathbf{v}}}
+    \def\bfw{{\mathbf{w}}}
     \def\bfy{{\mathbf{y}}}
     \def\bfzero{{\mathbf{0}}}
     \def\R{{\mathbf{R}}}
@@ -574,6 +575,32 @@ the proof (and hence the conclusion) holds in a more general setting,
 that of
 \(n\ge 3\) points \(\vphi_1,\dots,\vphi_n\) which are contained in a certain plane \(P\) at the initial moment
 and whose (not necesarily zero) velocities at that moment are also contained in the same plane \(P.\)
+
+<h3>Problem: mechanical system with two points and any initial conditions</h3>
+Here too we can employ a reflection matrix,
+but we need to adjust the inertial coordinate system first.
+Let \(\vphi\) and \(\psi\) be the two points
+and let \(\bfv\) be the velocity of \(\vphi\) at the initial moment:
+\(\bfv=\dot\vphi(t_0)\).
+Applying the uniform motion galilean transformation \(U_{-\bfv}\) we obtain a new inertial coordinate system
+in which \(\vphi\) has zero velocity at \(t_0\):
+$$
+\dot{(U_{-\bfv}\vphi)}(t_0)=\left.\frac{d(\vphi-\bfv t)}{dt}\right|_{t=t_0}=\dot{\vphi}(t_0)-\bfv=\bfzero.
+$$
+Thus we can assume without loss of generality that \(\vphi\) has zero velocity at the initial moment.
+<p></p>
+Now let \(\bfw\) be the velocity of \(\psi\) at the initial momemt, \(\bfw=\dot\psi(t_0).\)
+If \(\bfw=\bfzero\) then \(\vphi\) and \(\psi\) remain confined to a line
+(namely the one connecting them at \(t_0,\) per a previous problem),
+let alone to a plane.
+We can assume, then, that \(\bfw\ne\bfzero.\)
+Let \(P\) be the plane containing \(\vphi(t_0),\psi(t_0),\) and \(\bfw\)
+(again we can assume that these three points are distinct in \(\Rthree\))
+and let \(G\) be the orthogonal reflection of \(\Rthree\) across \(P.\)
+Then \(G\) does not change the initial conditions
+and it follows, as in the previous problems, that \(G\vphi=\vphi,G\psi=\psi\).
+This shows that \(\vphi\) and \(\psi\) remain in the plane \(P.\)
+$$\tag*{$\blacksquare$}$$
 
 </div>
 </main>
