@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Comments and solutions for V.I. Arnold's Methematical Models of Classical Mechanics">
+    <meta name="keywords" content="Mathematics,Physics">
+    <meta name="author" content="Adi Ofer">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="toc/toc.css">
+    <link rel="stylesheet" href="mmocm.css">
+    <title>Comments and solutions for V.I. Arnold's Methematical Models of Classical Mechanics</title>
+</head>
+<body>
+    <nav id="toc"></nav>
+    <main>
+        <div class="content">
+        <header>
+            <h1>Models of Classical Mechanics / V.I. Arnold</h1>
+            <p>Comments and solutions</p>
+        </header>
+        <h3>Part I: Newtonian Mechanics</h2>
+        <ul>
+            <li><a href="ch01.html">Chapter 1: Experimental facts</a></li>
+        </ul>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const h1 = document.querySelector("h1");
+            const computedStyle = getComputedStyle(h1);
+            const h1FontSize = computedStyle.fontSize;
+            const h1FontWeight = computedStyle.fontWeight;
+            const subheading = document.querySelector("header p");
+            subheading.style.fontSize = `calc(${h1FontSize} * 0.875)`;
+            subheading.style.fontWeight = `calc(${h1FontWeight} * 1)`;
+        });
+      </script>
+</body>
+</html>
