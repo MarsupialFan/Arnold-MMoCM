@@ -8,34 +8,47 @@ body {
     counter-reset: h1counter;
 }
 
-h1 {
+numberedheadings h1 {
     counter-reset: h2counter;
 }
-h1::before {
+numberedheadings h1::before {
     counter-increment: h1counter;
     content: counter(h1counter) ". ";
 }
 
-h2 {
+numberedheadings h2 {
     counter-reset: h3counter;
 }
-h2::before {
+numberedheadings h2::before {
     counter-increment: h2counter;
     content: counter(h2counter, upper-alpha) ". ";
 }
 
-h3 {
+numberedheadings h3 {
     counter-reset: h4counter;
 }
-h3::before {
+numberedheadings h3::before {
     counter-increment: h3counter;
     content: counter(h2counter, upper-alpha) "." counter(h3counter) ". ";
 }
 
-h4 {
+numberedheadings h4 {
     counter-reset: h5counter;
 }
-h4::before {
+numberedheadings h4::before {
     counter-increment: h4counter;
     content: counter(h2counter, upper-alpha) "." counter(h3counter) "." counter(h4counter, lower-roman) ". ";
+}
+
+header {
+    margin-block-start: 1.5em;
+    margin-block-end: 2em;
+}
+
+header h1 {
+    margin-block: 0em;
+}
+
+header p {
+    margin-block: 0.5em;
 }
