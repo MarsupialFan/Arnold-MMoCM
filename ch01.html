@@ -604,6 +604,41 @@ and it follows, as in the previous problems, that \(G\vphi=\vphi,G\psi=\psi\).
 This shows that \(\vphi\) and \(\psi\) remain in the plane \(P.\)
 $$\tag*{$\blacksquare$}$$
 
+<h1>Examples of mechanical systems</h1>
+<h2>Example 1: A stone falling to the earth</h2>
+<h2>Example 2: Falling from great height</h2>
+<h3>Problem: Escape velocity</h3>
+We cheat by peeking ahead and using a result from chapter 2, section 4.A.
+<p/>
+We assume that the question pertains to the vertical component of the motion,
+i.e. that the stone is thrown straight up,
+and denote by \(x(t)\) the distance of the stone from the center of the earth at time \(t\).
+Let \(t_0\) be the point in time in which the stone gets thrown and \(v_0=\dot{x}(t_0)\) be the initial velocity.
+<p/>
+In our case \(\ddot{x}=f(x)\) is a system with one degree of freedom in the sense of section 2.4.A,
+as \(f(x)=-g r_0^2/x^2\).
+It follows that the law of conservation of energy holds, hence
+<p/>
+$$
+\frac{1}{2}v_0^2 - 0 = \frac{1}{2}\dot{x}(t)^2 - \int_{r_0}^{x(t)}f(\xi)d\xi.
+$$
+To solve for the escape velocity \(v_0\) we can assume that \(\dot{x}(t)\longrightarrow 0_+\) as \(t\longrightarrow\infty\),
+so that
+$$
+g r_0^2\int_{r_0}^{x(t)}\frac{1}{\xi^2} d\xi\longrightarrow \frac{1}{2}v_0^2
+$$
+as \(t\longrightarrow\infty\).
+But
+$$
+\int_{r_0}^{x(t)}\frac{1}{\xi^2} d\xi =
+-\left[\frac{1}{\xi}\right]_{r_0}^{x(t)} =
+\frac{1}{r_0}-\frac{1}{x(t)},
+$$
+so when \(t\longrightarrow\infty\),
+\(\frac{1}{x(t)}\longrightarrow 0\) and we get \(g r_0\longrightarrow\frac{1}{2} v_0^2\).
+Solving for \(v_0\) using \(g=9.8\,m/s^2\) and \(r_0=6,371\,Km\) we get \(v_0\approx 11.174\,Km/s\).
+$$\tag*{$\blacksquare$}$$
+
 </numberedheadings>
 </div>
 </main>
