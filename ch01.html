@@ -57,6 +57,7 @@ We will denote an element of \(\Gn\) as \((x,\bfx)\) where \(x\in\R\) and \(\bfx
 $$(a_2-a_1) = (a_2-a_0)-(a_1-a_0)$$
 in \(\Rn\).
 <p></p>
+<proof>
 Proof - by definition \((a_1-a_0)\) is the (unique) element of \(\Rn\) such that
 \(a_0+(a_1-a_0)=a_1\). Similarly \(a_0+(a_2-a_0)=a_2\) and \(a_1+(a_2-a_1)=a_2\).
 We therefore get
@@ -68,7 +69,7 @@ a_0+\left((a_2-a_1)+(a_1-a_0)\right) & = a_0+\left((a_1-a_0)+(a_2-a_1)\right) \\
 \end{align}
 so by uniqueness we get
 \(a_2-a_0=(a_2-a_1)+(a_1-a_0)\). This gives the desired result.
-$$\tag*{$\blacksquare$}$$
+</proof>
 
 <h3>Affine transformations</h3>
 It is worthwhile recalling the definition of affine transformations.
@@ -228,6 +229,7 @@ This can happen non-trivially when \(G\) is a reflection along the line passing 
 Problem: every galilean transformation of \(\G\) can be written uniquely way as the composition of a rotation, a translation,
 and a uniform motion
 </h3>
+<proof>
 Let \(F\) be a galilean transformation of \(\G\),
 let \((s,\bfs)\in\G\) be defined by \(F(0,\mathbf{0})=(s,\bfs)\),
 and consider \(F_1=T_{(-s,-\bfs)}\circ F\):
@@ -279,9 +281,10 @@ F(1,\mathbf{0}) & = R_{G}\circ T_{(s,G^{-1}(\bfs))}(1,\bfv) \\
 \end{align}
 so \(\bfv=G^{-1}\left(F'(1,\mathbf{0})-\bfs\right)\).
 This completes the proof.
-$$\tag*{$\blacksquare$}$$
+</proof>
 
 <h3>Problem: all galilean structures are isomorphic</h3>
+<proof>
 Let \(X\) and \(Y\) be two galilean structures.
 Pick any two point \(x_0\in X\) and \(y_0\in Y\).
 We define a map \(\chi:X\rightarrow Y\) as follows:
@@ -299,7 +302,7 @@ Indeed, by definition of affine spaces \(\chi\) is one-to-one and by constructio
 \(\chi(x)-\chi(x_0)=x-x_0\).
 It follows then that \(\chi(x')-\chi(x)=x'-x\) for every \(x,x'\in\mathbf{A}\), 
 so \(\chi\) preserves the galilean structure.
-$$\tag*{$\blacksquare$}$$
+</proof>
 
 <h2>Motion, velocity, acceleration</h2>
 If \(\phi\) is a galilean transformation on \(\G\) then \(\phi\) extends naturally to
@@ -318,6 +321,7 @@ where the vertical arrows send \((t,\mathbf{x_1}, \dots, \mathbf{x_n})\) to
 
 <h2>Constraints imposed by the principle of relativity</h2>
 <h3>Example 1: constraints imposed by time translations</h3>
+<proof>
 Assume that \(\bfx=\vphi(t)\) is a solution of equation (1)
 and denote by \(\vphi_s\) the function mapping \(t\mapsto \vphi(t+s)\).
 Then, as discussed in the book, \(\bfx=\vphi_s(t)\) is a solution of equation (1) as well, that is
@@ -348,9 +352,10 @@ and it follows that
 $$\left.\frac{d\mathbf{F}\left(\bfx, \dot{\bfx}, T\right)}{dT}\right|_{T=t}=0$$
 for every value of \(t\).
 That is, \(F\) does not depend on \(T\).
-$$\tag*{$\blacksquare$}$$
+</proof>
 
 <h3>Example 2: constraints imposed by three-dimensional space translations</h3>
+<proof>
 We start by looking at translations in 3d space.
 For simplicity we will denote an \(N\)-vector \((\bfx_1,\dots,\bfx_n)\in\RN\) by \(\angular{\bfx_i}\).
 Recall that each \(\bfx_i\) is a 3-vector, that is \(\bfx_i\in\Rthree\) and \(N=3n\).
@@ -474,21 +479,23 @@ So \(\mathbf{G}\) does not depend on \(\dot{\bfy}_1\),
 and therefore \(\mathbf{F}\) depends only on the "relative coordinates"
 \(\{\dot{\bfx}_k-\dot{\bfx}_l\}.\)
 This concludes the proof of example 2.
-$$\tag*{$\blacksquare$}$$
+</proof>
 
 <h3>Example 3: constraints imposed by three-dimensional space rotations</h3>
 Nothing much to add here...
 
 <h3>Problem: mechanical system with a single point</h3>
+<proof>
 The hint pretty much gives it all:
 Because \(n=1\) in this case it follows from examples 1 and 2 that \(F\)
 does not depend on \(\bfx,\dot{\bfx}\), or on \(t\),
 so it must be a constant function, \(F=C\) where \(C\in\Rthree\).
 Now example 3 shows that \(G(C)=C\) for every orthogonal transformation \(G\),
 hence \(C\) must be the zero vector in \(\Rthree\).
-$$\tag*{$\blacksquare$}$$
+</proof>
 
 <h3>Problem: mechanical system with two points with initial zero velocities</h3>
+<proof>
 The idea of the proof is to show that the two points in question are invariant
 under a rotation around the line connecting them at the initial moment.
 Formally, let \(\vphi\) and \(\psi\) be the two points and let \(x,y,z\) be the coordinates of \(\Rthree\).
@@ -516,7 +523,7 @@ Thus uniqueness of the solution to equation (1)&mdash;assuming that our points a
 that \(G\vphi=\vphi\) and \(G\psi=\psi\).
 It follows that the \(y\) and \(z\) coordinates of \(\vphi(t)\) and of \(\psi(t)\) are \(0\) for all values of \(t\),
 which finishes the proof.
-$$\tag*{$\blacksquare$}$$
+</proof>
 
 <h4>Generalization</h4>
 The same proof works in a more general case,
@@ -554,6 +561,7 @@ Thus \(G\vphi_i=\vphi_i\) for \(i=1,\dots,n\) from the uniqueness of the solutio
 and it follows that the points will remain on the line \(L\).
 
 <h3>Problem: mechanical system with three points with initial zero velocities</h3>
+<proof>
 The solution here follows a similar approach to that employed for the previous problem,
 with a reflection about the plane (containing the three points in the initial moment)
 replacing the rotation.
@@ -569,7 +577,7 @@ It follows from the uniqueness of the solution of equation (1) that \(G\vphi_i=\
 for \(i=1,2,3\).
 But the plane \(P\) is the set of fixed points of the reflection \(G,\)
 so this completes the proof.
-$$\tag*{$\blacksquare$}$$
+</proof>
 
 <h4>Generalization</h4>
 Here too, similarly to the previous problem,
@@ -579,6 +587,7 @@ that of
 and whose (not necesarily zero) velocities at that moment are also contained in the same plane \(P.\)
 
 <h3>Problem: mechanical system with two points and any initial conditions</h3>
+<proof>
 Here too we can employ a reflection matrix,
 but we need to adjust the inertial coordinate system first.
 Let \(\vphi\) and \(\psi\) be the two points
@@ -602,30 +611,32 @@ and let \(G\) be the orthogonal reflection of \(\Rthree\) across \(P.\)
 Then \(G\) does not change the initial conditions
 and it follows, as in the previous problems, that \(G\vphi=\vphi,G\psi=\psi\).
 This shows that \(\vphi\) and \(\psi\) remain in the plane \(P.\)
-$$\tag*{$\blacksquare$}$$
+</proof>
 
 <h3>Problem: mechanics "through the looking glass"</h3>
+<proof>
 "Through the looking glass" amounts to applying a reflection \(G\).
 Let \(\vphi_i:\R\to\Rthree\;(i = 1, ..., n)\) be a motion of a system of points satisfying equation (1).
 We know that \(G\vphi_i:\R\to\Rthree\;(i = 1, ..., n)\) is another motion which satisfies (1).
 Thus \(G\) maps motions to motions, and this mapping is bijective as \(G^2=1\).
-$$\tag*{$\blacksquare$}$$
+</proof>
 
 <h1>Examples of mechanical systems</h1>
 <h2>Example 1: A stone falling to the earth</h2>
 <h2>Example 2: Falling from great height</h2>
 <h3>Problem: Escape velocity</h3>
+<proof>
 We cheat by peeking ahead and using a result from chapter 2, section 4.A.
-<p/>
+<p></p>
 We assume that the question pertains to the vertical component of the motion,
 i.e. that the stone is thrown straight up,
 and denote by \(x(t)\) the distance of the stone from the center of the earth at time \(t\).
 Let \(t_0\) be the point in time in which the stone gets thrown and \(v_0=\dot{x}(t_0)\) be the initial velocity.
-<p/>
+<p></p>
 In our case \(\ddot{x}=f(x)\) is a system with one degree of freedom in the sense of section 2.4.A,
 as \(f(x)=-g r_0^2/x^2\).
 It follows that the law of conservation of energy holds, hence
-<p/>
+<p></p>
 $$
 \frac{1}{2}v_0^2 - 0 = \frac{1}{2}\dot{x}(t)^2 - \int_{r_0}^{x(t)}f(\xi)d\xi.
 $$
@@ -644,7 +655,7 @@ $$
 so when \(t\longrightarrow\infty\),
 \(\frac{1}{x(t)}\longrightarrow 0\) and we get \(g r_0\longrightarrow\frac{1}{2} v_0^2\).
 Solving for \(v_0\) using \(g=9.8\,m/s^2\) and \(r_0=6,371\,Km\) we get \(v_0\approx 11.174\,Km/s\).
-$$\tag*{$\blacksquare$}$$
+</proof>
 
 </numberedheadings>
 </div>

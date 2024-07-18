@@ -52,3 +52,8 @@ header h1 {
 header p {
     margin-block: 0.5em;
 }
+
+proof::after {
+    vertical-align: -11%;
+    content: "\0025FE"; /* "\b" gives an empty square */
+}
