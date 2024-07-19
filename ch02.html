@@ -22,8 +22,58 @@
 <main>
 <div class="chapter">Chapter 2: Investigation of the equations of motion</div>
 <div class="content">
+\(
+    \def\R{{\mathbf{R}}}
+    \def\Rto#1{{\R^{#1}}}
+    \def\Rtwo{{\Rto{2}}}
+    \def\vphi{{\varphi}}
+    \def\bfvphi{{\mathbf{\varphi}}}
+\)
 <numberedheadings>
 <h1>Systems with one degree of freedom</h1>
+<h2>Definitions</h2>
+To show that adding a constant to the potential energy does not change the equation of motion (1),
+consider a potential energy \(U(x) = -\int_{x_0}^{x}f(\xi)d\xi\) let \(C\in\R\) be a constant.
+Since
+$$
+\frac{d}{dx}\left(U(x)+C\right) = \frac{d}{dx}U(x)=f(x)
+$$
+we see that \(U(x)+C\) gives rise to the same equation (1).
+
+<h2>Phase flow</h2>
+<h3>Notation</h3>
+We denote the \(x\)- and \(y\)-coordinates of motion \(\bfvphi:\R\rightarrow\Rtwo\) by \(\bfvphi_x,\bfvphi_y\),
+respectively.
+<h3>Comments</h3>
+The phase velocity vector field is determined by the right-hand side of both equations in (2),
+i.e. it is the vector field defined by
+$$
+(x,y)\mapsto(y,f(x)).
+$$
+<p></p>
+Let \(\bfvphi:\R\rightarrow\Rtwo\) be a motion solving equation (2).
+Then \(\dot{\bfvphi} = \left(\dot{\bfvphi_x}, \dot{\bfvphi_y}\right) = \left(\bfvphi_y,f(\bfvphi_x)\right)\),
+so we see that the velocity of the moving point of \(\bfvphi\) at each moment of time
+is indeed equal to the phase velocity vector at the location of the phase point at that moment.
+
+<h3>Problem: the uniqueness of a phase curve through a phase point</h3>
+<proof>
+Let \(\vphi,\vphi'\) be two motions whose phase curves pass through the same phase point \((x_0,y_0)\):
+<p></p>
+\begin{align}
+\vphi(t_0) & = (x_0,y_0), \\
+\vphi'(t'_0) & = (x_0,y_0).
+\end{align}
+Define another motion \(\psi(t)=\vphi'(t+\Delta t)\) where \(\Delta t = t'_0-t_0\).
+Then
+$$
+\ddot{\psi_x}(t)=\ddot{\vphi'_x}(t+\Delta t)=f\left(\vphi'_x(t+\Delta t)\right)=f(\psi_x(t)),
+$$
+implying that \(\psi\) is another motion solving (2).
+But \(\psi(t_0)=\vphi'(t'_0)=(x_0,y_0)\),
+so by uniqueness of the solution of an ordinary differential equation with given initial conditions we see that \(\psi = \vphi\).
+But \(\psi\) and \(\vphi'\) have the same phase curve, so this completes the proof.
+</proof>
 
 <h1>Systems with two degrees of freedom</h1>
 
