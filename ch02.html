@@ -167,11 +167,24 @@ They both have the same magnitidue, namely \(\sqrt{x^2+y^2}\).
 
 <h3>Example 2</h3>
 <h4>Fact 1</h4>
-As seen above the phase velocity vector at an equilibrium position is zero.
-In particular \(y\), which is the first coordinate of the phase velocity vector, is zero at such a point,
-showing that the equilibrium position lies on the \(x\)-axis of the phase plane.
-<p></p>
-Now let \(\xi\) be a critical point of the potential energy \(U\),
+We show that a point \((\xi,y)\) is an equilibrium position iff both of the following conditions hold:
+<ul>
+    <li>The point is on the \(x\)-axis, and</li>
+    <li>\(\xi\) is a critical point of the potential energy \(U\).</li>
+</ul>
+First, let \(P=(\xi,y)\) be an equilibrium position.
+Then, as seen above, the phase velocity vector at \(P\) is zero.
+Thus
+<ul>
+    <li>
+        \(y\), which is the first coordinate of the phase velocity vector, is zero at \(P\),
+        showing that \(P\) lies on the \(x\)-axis of the phase plane.
+    </li>
+    <li>
+        Looking at the second coordinate of the phase velocity vector we get \(\left.-d\,U/dx\right|_{x=\xi}=-f(\xi)=0\).
+    </li>
+</ul>
+Conversely let \(\xi\) be a critical point of the potential energy \(U\),
 and consider the point \((\xi,0)\) of the phase plane.
 Let \(\bfvphi:\R\rightarrow\Rtwo\) be the constant motion \(\varphi(t)=(\xi,0)\).
 Then \(\dot{\varphi_x} = 0 = \varphi_y\)
