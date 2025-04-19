@@ -192,6 +192,35 @@ and \(\dot{\varphi_y} = 0 = \left.-d\,U/dx\right|_{x=\xi} = f(\varphi_x)\),
 so \(\varphi\) is a solution of equation (2).
 This shows that \((\xi,0)\) is an equilibrium position.
 
+<h4>Fact 2</h4>
+Let \(p=(\xi,\chi)\) be a point on the level set \(L_0\) of energy \(E_0\).
+This level set is the set of solutions, in the phase plane, of the equation \(L(x,y)=0\) where \(L(x,y)=E(x,y)-E_0\).
+From the definition of the energy function we get that the gradient of \(L\) is
+$$
+\nabla L =
+\left(\frac{\partial L}{\partial x}, \frac{\partial L}{\partial y}\right) =
+\left(\frac{dU}{dx}, y\right).
+$$
+If \(p\) is not an equilibrium position then the gradient of \(L\) at \(p\) has rank 1 (i.e. it is not the zero vector),
+so by the implicit function theorem there exists a unique differentiable function \(\varphi\), such that either
+<ul>
+    <li>
+        \(\chi = \varphi(\xi)\) and \(L(x,\varphi(x))=0\) in a neighborhood of \(\xi\), or
+    </li>
+    <li>
+        \(\xi = \varphi(\chi)\) and \(L(\varphi(y),y)=0\) in a neighborhood of \(\chi\).
+    </li>
+</ul>
+Either way this shows that the level set \(L_0\) is a smooth curve in some neighborhood of \(p\).
+<p></p>
+For the second part of the fact assume that \(E_0\) is not a critical value of the potential energy.
+Then, by the previous fact, no point \(p\in L_0\) is an equilibrium position,
+and so \(L_0\) is a smooth curve&mdash;the graph of a unique differentiable function \(\varphi_{p}\)&mdash;in some neighborhood of \(p\).
+The uniqueness part implies that the various \(\varphi_{p}\), \(p\in L_0\),
+are equal whenever their domains of definition overlap,
+hence they can be combined to form a "global" differential function \(\varphi\) whose graph is \(L_0\).
+This shows that \(L_0\) in its entirety ("globally") is a smooth curve.
+
 <h1>Systems with two degrees of freedom</h1>
 
 </numberedheadings>
