@@ -221,6 +221,23 @@ are equal whenever their domains of definition overlap,
 hence they can be combined to form a "global" differential function \(\varphi\) whose graph is \(L_0\).
 This shows that \(L_0\) in its entirety ("globally") is a smooth curve.
 
+<h3>Problem: the time it takes to get from \(x_1\) to \(x_2\)</h3>
+<proof>
+    Let \(\varphi\) be a motion such that \(\varphi(t_1)=x_1\) and \(\varphi(t_2)=x_2\).
+We look at the phase plane coordinates \((x,y)\).
+Changing variables \(x=\varphi(t)\) in the integral we get
+$$
+\int_{x_1}^{x_2}\frac{dx}{\sqrt{2(E-U(x))}}=
+\int_{x_1}^{x_2}\frac{dx}{\sqrt{y^2}}=
+\int_{t_1}^{t_2}\frac{\dot{x}(t)}{\sqrt{\dot{x}^2(t)}}dt.
+$$
+The assumption that we go from \(x_1\) to \(x_2\) in one direction means that we can assume that
+\(\dot{\varphi}(t)\) is either positive or negative throughout the journey.
+Without loss of generality we can assume that the sign is positive,
+otherwise we can swap the order of \(x_1\) and \(x_2\)&mdash;we care about the absolute value of the time, anyway.
+Thus the numerator and denominator in the integral cancel out, and we get the desired result.
+</proof>
+
 <h1>Systems with two degrees of freedom</h1>
 
 </numberedheadings>
