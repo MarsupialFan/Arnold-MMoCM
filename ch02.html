@@ -12,11 +12,19 @@
         body {
             counter-set: h1counter 3;
         }
+
+        /*
+        ** Hack to rotate the label of the y axis in plotly.
+        ** Ref: https://community.plotly.com/t/y-axis-name-rotation/513/5
+        */
+        .infolayer [class^='y'][class$='title'] {
+            transform: rotate(0deg);
+        }
     </style>
     <title>Chapter 2: Investigation of the equations of motion</title>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-</head>
+    <script src="https://cdn.plot.ly/plotly-3.0.1.min.js" charset="utf-8"></script>
 <body>
 <nav id="toc"></nav>
 <main>
@@ -238,6 +246,36 @@ otherwise we can swap the order of \(x_1\) and \(x_2\)&mdash;we care about the a
 Thus the numerator and denominator in the integral cancel out, and we get the desired result.
 </proof>
 
+<h3>Problem: phase curves for the equation of an ideal planar pendulum</h3>
+As noted in the remark following the problem statement in the book
+\(x\) denotes the angle of displacement of the pendulum
+and, accordingly, \(\dot{x}\) is the rate of change of this angle.
+<p>
+The potential energy function is
+$$
+U(x) = -\int_{x_0}^{x}-\sin(\xi)d\xi = \cos x_0 - \cos x.
+$$
+We take \(x_0=0\) so that \(U(x)=1-\cos x\).
+The critical points of \(U\) are \(\pi\cdot n\) for \(n\in\mathbf{Z}\),
+the critical values of the potential energy are \(0\) and \(2\),
+and it follows from the two facts above that the equilibrium positions are the points \((\pi\cdot n,0)\), \(n\in\mathbf{Z}\) in the phase plane.
+<p>
+The \(L_0\) level set is given by
+$$
+L_0 = \frac{1}{2}y^2 + 1 - \cos x = \frac{1}{2}y^2 + 2\sin^2(x/2)
+$$
+so
+$$
+y = \pm\sqrt{2L_0 - 4\sin^{2}(x/2)}.
+$$
+Note that \(\sin^2\) is periodic with period \(\pi\),
+so the expression for \(y\) above is periodic with period \(2\pi\).
+Plugging in the values \(0\), \(\pm\pi/3\), and \(\pm\pi/2\) for \(x\)
+we get the points \((0,\pm\sqrt{2L_0})\), \((\pm\pi/3,\pm\sqrt{2L_0-1})\), and \((\pm\pi/2,\pm\sqrt{2L_0-2})\) on the \(L_0\) level set.
+<p>
+Here is what the phase curves look like:
+<div id="graph-ideal-planar-pendulum" style="width: 100%;"></div>
+
 <h1>Systems with two degrees of freedom</h1>
 
 </numberedheadings>
@@ -246,6 +284,78 @@ Thus the numerator and denominator in the integral cancel out, and we get the de
 <script type="module">
     import add_toc from "./toc/toc.js";
     add_toc("main", "toc");
+
+    // Phase curves plot: ideal planar pendulum
+    let piCodePoint = 0x0001D70B;
+    const tickvals = [];
+    const ticktext = [];
+    for (let i = -4; i <= 4; i++) {
+        if (i == 0) {
+            tickvals.push(0);
+            ticktext.push("0");
+        } else {
+            tickvals.push(i * Math.PI);
+            ticktext.push(`${i}` + String.fromCodePoint(piCodePoint));
+        }
+    }
+    const layout = {
+        //margin: { l: 50, r: 50, t: 50, b: 50, pad: 40, },
+        margin: { l: 100, r: 100, t: 40, b: 40, },
+        xaxis: {
+            tickmode: "array",
+            tickvals: tickvals,
+            ticktext: ticktext,
+            title: { text: "x" },
+        },
+        yaxis: {
+            title: { text: String.fromCodePoint(0x00001E8B) },
+        },
+    };
+
+    // Range and resolution settings
+    const xRange = [-4 * Math.PI, 4 * Math.PI];
+    const yRange = [-3, 3];
+    const xResolution = 100; // Number of points in x dimension
+    const yResolution = 100; // Number of points in y dimension
+
+    // Create arrays of x and y values
+    const x = Array.from({length: xResolution}, (_, i) => xRange[0] + i * (xRange[1] - xRange[0]) / (xResolution - 1));
+    const y = Array.from({length: yResolution}, (_, i) => yRange[0] + i * (yRange[1] - yRange[0]) / (yResolution - 1));
+
+    // Calculate function values for the level set
+    const z = [];
+    for (let i = 0; i < yResolution; i++) {
+        const zRow = [];
+        for (let j = 0; j < xResolution; j++) {
+            zRow.push(y[i] * y[i] / 2 + 1 - Math.cos(x[j]));  // level value
+        }
+        z.push(zRow);
+    }
+
+    // Prepare the plot data
+    const data = [
+        {
+            x: x,
+            y: y,
+            z: z,
+            type: 'contour',
+            showscale: false,      // no color scale bar
+            contours: {
+                coloring: 'none',  // no fill color between contour lines
+                showlabels: true,  // show value labels on contour lines
+                start: 0,
+                end: 6,
+                size: 0.5,
+            },
+            line: {                // contour line settings
+                width: 1,
+                color: "black", //"rgb(4, 7, 32)", //"rgb(188, 198, 204)", //"darkgray", //"StormyGray",
+            },
+        },
+    ];
+
+    // Finally, plot it
+    Plotly.newPlot("graph-ideal-planar-pendulum", data, layout);
 </script>
 </body>
 </html>
