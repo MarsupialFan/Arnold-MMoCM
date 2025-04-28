@@ -293,6 +293,17 @@ and
 $$
 y = \pm\sqrt{2L_0 + 2\cos x - 2 - 2Mx} = \pm\sqrt{2L_0 - 4\sin^{2}(x/2) - 2Mx}.
 $$
+We illustrate the phase flows for a few concrete values of \(M\).
+Here's the graph for \(M=-0.5\):
+<div id="graph-pendulum-rotating-axis-05" style="width: 100%;"></div>
+For \(M=0.35\):
+<div id="graph-pendulum-rotating-axis035" style="width: 100%;"></div>
+For \(M=0.7\):
+<div id="graph-pendulum-rotating-axis07" style="width: 100%;"></div>
+For \(M=1\):
+<div id="graph-pendulum-rotating-axis1" style="width: 100%;"></div>
+And finally, for \(M=1.5\):
+<div id="graph-pendulum-rotating-axis15" style="width: 100%;"></div>
 
 <h1>Systems with two degrees of freedom</h1>
 
@@ -395,8 +406,13 @@ $$
         },
     ];
 
-    // Finally, plot it
+    // Plot the phase flows
     Plotly.newPlot("graph-ideal-planar-pendulum", data, layout);
+    Plotly.newPlot("graph-pendulum-rotating-axis-05", [prepare_plot_data(-0.5)], layout);
+    Plotly.newPlot("graph-pendulum-rotating-axis035", [prepare_plot_data(0.35)], layout);
+    Plotly.newPlot("graph-pendulum-rotating-axis07", [prepare_plot_data(0.7)], layout);
+    Plotly.newPlot("graph-pendulum-rotating-axis1", [prepare_plot_data(1)], layout);
+    Plotly.newPlot("graph-pendulum-rotating-axis15", [prepare_plot_data(1.5)], layout);
 </script>
 </body>
 </html>
