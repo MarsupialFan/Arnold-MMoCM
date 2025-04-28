@@ -305,6 +305,23 @@ For \(M=1\):
 And finally, for \(M=1.5\):
 <div id="graph-pendulum-rotating-axis15" style="width: 100%;"></div>
 
+<h3>Problem: tangent lines to branches of critical level at maximal potential energy</h3>
+Recall that in the phase plane \(y=\dot{x}\).
+From the definition of the potential energy \(U\) we get:
+$$
+U' = -\ddot{x} = -\frac{dy}{dt} = -\frac{dy}{dx}\frac{dx}{dt} = -y'y
+$$
+(here the \(F'\) denotes the derivative of a function \(F\) with respect to \(x\)).
+Thus \(U'' = -y''y-(y')^2\).
+<p>
+At phase plane point \((\xi,\chi)\) where the energy is equal to the maximal potential energy
+the \(y\)-coordinate, which is the velocity, must be zero: \(\chi=0\).
+It follows, then, that at such a point \(U''(\xi) = -\left(y'(\xi)\right)^2\),
+hence the equation of the tangent lines (at this point) is
+$$
+y = y - \chi = y'(\xi)(x-\xi) = \pm\sqrt{-U''(\xi)}\cdot(x-\xi).
+$$
+
 <h1>Systems with two degrees of freedom</h1>
 
 </numberedheadings>
