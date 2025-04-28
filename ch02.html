@@ -359,11 +359,11 @@ $$
     const yEq = Array.from({length: 9}, (_, i) => 0);
 
     // Prepare the plot data
-    const data = [
-        {
+    function prepare_plot_data(M) {
+        return {
             x: x,
             y: y,
-            z: calculate_level_set_data(0),
+            z: calculate_level_set_data(M),
             type: 'contour',
             showscale: false,      // no color scale bar
             contours: {
@@ -377,7 +377,11 @@ $$
                 width: 1,
                 color: "black", //"rgb(4, 7, 32)", //"rgb(188, 198, 204)", //"darkgray", //"StormyGray",
             },
-        },
+        };
+    }
+
+    const data = [
+        prepare_plot_data(0),
         {
             x: xEq,
             y: yEq,
