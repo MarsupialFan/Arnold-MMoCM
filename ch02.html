@@ -342,13 +342,16 @@ $$
     const y = Array.from({length: yResolution}, (_, i) => yRange[0] + i * (yRange[1] - yRange[0]) / (yResolution - 1));
 
     // Calculate function values for the level set
-    const z = [];
-    for (let i = 0; i < yResolution; i++) {
-        const zRow = [];
-        for (let j = 0; j < xResolution; j++) {
-            zRow.push(y[i] * y[i] / 2 + 1 - Math.cos(x[j]));  // level value
+    function calculate_level_set_data(M) {
+        const z = [];
+        for (let i = 0; i < yResolution; i++) {
+            const zRow = [];
+            for (let j = 0; j < xResolution; j++) {
+                zRow.push(y[i] * y[i] / 2 + 1 - Math.cos(x[j]) + M * x[j]);  // level value
+            }
+            z.push(zRow);
         }
-        z.push(zRow);
+        return z;
     }
 
     // Equilibrium positions
@@ -360,7 +363,7 @@ $$
         {
             x: x,
             y: y,
-            z: z,
+            z: calculate_level_set_data(0),
             type: 'contour',
             showscale: false,      // no color scale bar
             contours: {
