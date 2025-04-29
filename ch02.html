@@ -322,6 +322,31 @@ $$
 y = y - \chi = y'(\xi)(x-\xi) = \pm\sqrt{-U''(\xi)}\cdot(x-\xi).
 $$
 
+<h3>Problem: the period of motion along a closed phase curve</h3>
+<proof>
+Consider a close phase curve (with is not an equilibrium position) corresponding to energy level \(E\),
+and let \(S(E)\) denote the area enclosed by this curve.
+Along the curve \(y^2=E-U(x)\),
+hence the curve is symmetric along the \(x\)-axis and \(S(E)\) is twice the area bound
+by the \(x\)-axis from below and by the phase curve from above.
+Without loss of generality we can assume that our phase curve intersects the \(x\)-axis only at two points,
+\(x_1\) and \(x_2\),
+with \(x_1\lt x_2\).
+Then
+$$
+S(E) = 2\int_{x_1}^{x_2}y\cdot dx = 2\int_{x_1}^{x_2}\sqrt{2(E-U(x))}\cdot dx.
+$$
+Applying Leibniz Integral Rule we get
+$$
+\frac{dS}{dE} = 2\int_{x_1}^{x_2}\frac{\partial}{\partial E}\left(\sqrt{2(E-U(x))}\right) dx =
+2\int_{x_1}^{x_2}\frac{2}{2\sqrt{2(E-U(x))}}dx.
+$$
+Per an earlier problem the integral on the right hand side is equal to \(t_2-t_1\),
+where \(t_1,t_2\) are the times in which the motion goes through \(x_1,x_2\), respectively,
+which in turn is half the period \(T\).
+Thus \(T=dS/dE\).
+</proof>
+
 <h1>Systems with two degrees of freedom</h1>
 
 </numberedheadings>
