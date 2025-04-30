@@ -381,6 +381,30 @@ $$
 <h3>Corollary: energy along a trajectory remains inside a potential energy well</h3>
 Since \(\left(\dot{\bfx},\dot{\bfx}\right)\ge 0\) (it is square of the absolute value of the vector \(\dot{\bfx}\)),
 \(E\ge U(\bfx)\).
+
+<h3>Problem: example of a system with two degrees of freedom which is not conservative</h3>
+Consider the system where \(f(\bfx)=\bigl(\begin{smallmatrix}0 \\ x_1 \\ \end{smallmatrix}\bigr)\).
+If \(U\) is a potential energy function for this system then \(\partial{U}/\partial{x_1}=0\),
+so \(U\) cannot depend on \(x_1\).
+This stands in contradiction to \(\partial{U}/\partial{x_2}=x_1\).
+This argument can be made into a formal proof by integrating along a square path:
+On one hand
+$$
+U\left(\bigl(\begin{smallmatrix}1 \\ 1 \\ \end{smallmatrix}\bigr)\right) -
+U\left(\bigl(\begin{smallmatrix}0 \\ 0 \\ \end{smallmatrix}\bigr)\right) =
+\int_{0}^{1}\frac{\partial{U}}{\partial{x_1}}\left(\bigl(\begin{smallmatrix}\xi \\ 0 \\ \end{smallmatrix}\bigr)\right)d\xi +
+\int_{0}^{1}\frac{\partial{U}}{\partial{x_2}}\left(\bigl(\begin{smallmatrix} 1 \\ \chi \\ \end{smallmatrix}\bigr)\right)d\chi =
+0 + 1,
+$$
+whereas on the other hand
+$$
+U\left(\bigl(\begin{smallmatrix}1 \\ 1 \\ \end{smallmatrix}\bigr)\right) -
+U\left(\bigl(\begin{smallmatrix}0 \\ 0 \\ \end{smallmatrix}\bigr)\right) =
+\int_{0}^{1}\frac{\partial{U}}{\partial{x_2}}\left(\bigl(\begin{smallmatrix} 0 \\ \chi \\ \end{smallmatrix}\bigr)\right)d\chi +
+\int_{0}^{1}\frac{\partial{U}}{\partial{x_1}}\left(\bigl(\begin{smallmatrix}\xi \\ 1 \\ \end{smallmatrix}\bigr)\right)d\xi =
+0,
+$$
+contradiction.
 </numberedheadings>
 </div>
 </main>
