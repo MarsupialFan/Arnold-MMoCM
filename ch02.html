@@ -362,6 +362,22 @@ Recall that \(\partial{U}/\partial{\bfx}\) denotes the row vector
 Note that \(\ddot{\bfx}\) is a column vector,
 so technically we need to use the transpose of \(\partial{U}/\partial{\bfx}\) here.
 
+<h2>The law of conservation of energy</h2>
+<h3>Theorem: the total energy of a conservative system is conserved</h3>
+Here the expression \((A,B)\) denotes the inner product of \(A\) and \(B\).
+If \(a_1,\dots, a_n\) are the coordinates of \(A\) and \(b_1,\dots,b_n\) are the coordinates of \(B\),
+then (assuming that \(A\) and \(B\) are functions of \(t\))
+$$
+\frac{d}{dt}(A,B)=\frac{d}{dt}\left(\sum_{i=1}^{n}a_i b_i\right)=
+\sum_{i=1}^{n}\dot{a_i} b_i + \sum_{i=1}^{n}a_i\dot{b_i}=
+\left(\dot{A},B\right)+\left(A,\dot{B}\right).
+$$
+That is, the product rule works with inner products.
+In particular,
+$$
+\frac{d}{dt}\left(\dot{\bfx},\dot{\bfx}\right) = \left(\ddot{\bfx},\dot{\bfx}\right)+\left(\dot{\bfx},\ddot{\bfx}\right).
+$$
+
 </numberedheadings>
 </div>
 </main>
