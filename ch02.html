@@ -405,6 +405,74 @@ U\left(\bigl(\begin{smallmatrix}0 \\ 0 \\ \end{smallmatrix}\bigr)\right) =
 0,
 $$
 contradiction.
+
+<h2>Phase space</h2>
+<h3>Problem: the phase curves (in example 1) are great circles of the 4-sphere</h3>
+Recall that our system decomposes into two independent systems,
+one whose phase space is \(\{x_1,y_1\}\) and another whose phase space is \(\{x_2,y_2\}\).
+Accordingly, a solution \(\varphi\) of our system decomposes into two independent solutions,
+which we will denote by \(\varphi_1\) (a solution in the \(\{x_1,y_1\}\) phase space)
+and \(\varphi_2\) (a solution in the \(\{x_2,y_2\}\) phase space).
+We split into 4 cases:
+<ul>
+<li>
+<b>Both \(\mathbf{\varphi_1}\) and \(\mathbf{\varphi_2}\) are equilibrium positions.</b>
+This is the degenerate case in which \(E_0=0\), and both \(\pi_{E_0}\) and our phase curve consist just of the origin \((0,0,0,0)\).
+</li>
+<li>
+<b>\(\mathbf{\varphi_1}\) is an equilibrium position, \(\mathbf{\varphi_2}\) is not an equilibrium position.</b>
+The phase curve in this case lies on the 2-dimensional plane defined by the equations \(x_1=0\) and \(y_1=0\),
+and we know from our study of systems with one degree of freedom that the phase curve of \(\varphi_2\) is a circle
+(which is the energy level set corresponding to \(E_0\)).
+</li>
+<li>
+<b>\(\mathbf{\varphi_1}\) is not an equilibrium position, \(\mathbf{\varphi_2}\) is an equilibrium position.</b>
+This is similar to the previous case.
+</li>
+<li>
+<b>Neither \(\mathbf{\varphi_1}\) nor \(\mathbf{\varphi_2}\) is an equilibrium position.</b>
+We have
+$$
+\begin{cases}
+c_1 x_1 + c_2 y_1 = (c_1^2 + c_2^2)\cos t\\
+c_3 x_2 + c_4 y_2 = (c_3^2 + c_4^2)\cos t,\\
+\end{cases}
+$$
+yielding
+$$(c_3^2 + c_4^2)(c_1 x_1 + c_2 y_1) = (c_1^2 + c_2^2)(c_3 x_2 + c_4 y_2).$$
+Similarly by looking at \(c_2 x_1 - c_1 y_1\) and \(c_4 x_2 - c_3 y_2\) we get
+$$(c_3^2 + c_4^2)(c_2 x_1 - c_1 y_1) = (c_1^2 + c_2^2)(c_4 x_2 - c_3 y_2).$$
+Because \(\mathbf{\varphi_1}\) and \(\mathbf{\varphi_2}\) are not equilibrium positions,
+\(c_1\) and \(c_2\) cannot both be zero,
+and similarly \(c_3\) and \(c_4\) cannot both be zero.
+We show that the two equations above are linearly independent,
+and therefore define a 2-dimensional plane in our 4-dimensional phase plane.
+Indeed, assume that \(c_1\ne 0\).
+Then we get the equations
+$$
+\begin{pmatrix}
+1 & c_2/c_1 & - Kc_3 & Kc_4\\
+c_2/c_1 & -1 & -Kc_4 & -Kc_3\\
+\end{pmatrix}
+\begin{pmatrix}
+x_1\\
+y_1\\
+x_2\\
+y_2\\
+\end{pmatrix}
+=
+\begin{pmatrix}
+0\\
+0\\
+\end{pmatrix}
+$$
+where \(K=(c_1^2 + c_2^2)/(c_1 c_3^2 + c_1 c_4^2)\).
+Subtracting \(c_2/c_1\) times the first row from the second row in the matrix,
+and using the fact that \(c_2^2/c_1^2\ge 0\) we see that the matrix has rank 2.
+A similar argument works if \(c_2\ne 0\).
+</li>
+</ul>
+
 </numberedheadings>
 </div>
 </main>
