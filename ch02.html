@@ -32,6 +32,8 @@
 <div class="content">
 \(
     \def\bfx{{\mathbf{x}}}
+    \def\C{{\mathbf{C}}}
+    \def\Chat{{\hat{\C}}}
     \def\R{{\mathbf{R}}}
     \def\Rto#1{{\R^{#1}}}
     \def\Rtwo{{\Rto{2}}}
@@ -473,6 +475,41 @@ A similar argument works if \(c_2\ne 0\).
 </li>
 </ul>
 
+<h3>Problem: parametrization of the set of phase curves on \(\pi_{E_0}\) using the Hopf map</h3>
+Let \(A_w\) be the pre-image, under the Hopf map, of \(w\in\Chat\) in \(\pi_{E_0}\) (here \(\Chat=\C\cup{\infty}\)),
+and let \((x_1,y_1,x_2,y_2)\in A_w\).
+Then both of the following equations hold:
+$$
+\begin{cases}
+(x_1 + i y_1)/(x_2 + i y_2) = w\\
+\frac{1}{2}\left(x_1^2+x_2^2+y_1^2+y_2^2\right) = E_0.\\
+\end{cases}
+$$
+<p>
+Assume \(w\ne\infty\).
+Then taking the absolute value squared of the first equation we get
+$$x_1^2+y_1^2=\lvert w\rvert^2(x_2^2+y_2^2).$$
+Subtracting half of this from the second equation above and collecting terms yields
+$$\frac{1}{2}\left(x_2^2+y_2^2\right)=E_2\stackrel{\text{def}}{=}E_0\frac{1}{1+\lvert w\rvert^2}$$
+which in turn implies
+$$\frac{1}{2}\left(x_1^2+y_1^2\right)=E_1\stackrel{\text{def}}{=}E_0\frac{\lvert w\rvert^2}{1+\lvert w\rvert^2},$$
+thus the \(x_1,y_1\) component of \(A_w\) is the phase curve (in \(\R^2\)) corresponding to the \(E_1\)-energy level set
+and the \(x_2,y_2\) component of \(A_w\) is the phase curve (in \(\R^2\)) corresponding to the \(E_2\)-energy level set.
+And since \(E_1+E_2=E_0\) we see that \(A_w\) is the phase curve (in \(\R^4\)) corresponding to the \(E_0\)-energy level set.
+<p>
+Now assume \(w=\infty\).
+Then \(x_2 + iy_2 = 0\), i.e. \(x_2 = y_2 = 0\) is an equilibrium position
+and \(\frac{1}{2}\left(x_1^2+y_1^2\right)=E_0\) is the \(E_0\)-energy level set (in \(\R^2\)),
+so here too \(A_w\) is the phase curve (in \(\R^4\)) corresponding to the \(E_0\)-energy level set.
+<p>
+This finished the proof.
+We can go a step further, though, and derive the equations of motions as well.
+Indeed, \(x_1^2+y_1^2\) is a constant (\(E_0\) or \(E_1\)),
+so \(2x_1\dot{x}_1+2y_1\dot{y}_1=0\).
+Substituting \(y_1=\dot{x}_1\) produces the equation \(\dot{x}_1(x_1+\ddot{x}_1)=0\).
+When \(\dot{x}_1=0\) we get an equilibrium position;
+otherwise \(\ddot{x}_1=-x_1\).
+An idential argument reproduces the equation of motion for \(x_2\).
 </numberedheadings>
 </div>
 </main>
