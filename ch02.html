@@ -409,6 +409,32 @@ $$
 contradiction.
 
 <h2>Phase space</h2>
+<h3>Example 1: small oscillations of a spherical pendulum</h3>
+A different way to write the a solution is
+$$
+\begin{cases}
+x_1 = A_1 \sin(t +\varphi_1)\\
+x_2 = A_2 \sin(t +\varphi_2).
+\end{cases}
+$$
+To see that this is an equivalent expression of a solution note that
+$$A(\sin t + \varphi)=A\sin t\cos\varphi + A\cos t\sin\varphi.$$
+Thus to show equivalence we need to solve the equations
+$$
+\begin{cases}
+c_1 = A_1\cos\varphi_1\\
+c_2 = A_1\sin\varphi_1
+\end{cases}
+$$
+and the corresponding equations for \(x_2\).
+<p>
+Given a solution for \(x_1\) in terms of \(A_1,\varphi_1\) we define \(c_1,c_2\) as in these equations and
+get the same solution expressed in terms of \(c_1,c_2\).
+Conversely, suppose that we have a solution in terms of \(c_1,c_2\).
+If \(c_1\ne 0\) then from the equations above we get \(\tan\varphi_1=c_2/c_1\) from which we can find \(\varphi_1\), and then \(A_1\).
+A similar argument works if \(c_2\ne 0\).
+Finally, if \(c_1=c_2=0\) then we take \(A_1=0\) and any \(\varphi_1\).
+
 <h3>Problem: the phase curves (in example 1) are great circles of the 4-sphere</h3>
 Recall that our system decomposes into two independent systems,
 one whose phase space is \(\{x_1,y_1\}\) and another whose phase space is \(\{x_2,y_2\}\).
